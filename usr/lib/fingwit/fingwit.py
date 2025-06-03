@@ -1,0 +1,391 @@
+#!/usr/bin/python3
+import gettext
+import gi
+import locale
+import os
+import setproctitle
+import subprocess
+import threading
+gi.require_version('Gtk', '3.0')
+gi.require_version('XApp', '1.0')
+from gi.repository import Gtk, Gio, GLib, XApp, Pango, GdkPixbuf, Gdk
+
+setproctitle.setproctitle("fingwit")
+
+# i18n
+APP = 'fingwit'
+LOCALE_DIR = "/usr/share/locale"
+locale.bindtextdomain(APP, LOCALE_DIR)
+gettext.bindtextdomain(APP, LOCALE_DIR)
+gettext.textdomain(APP)
+_ = gettext.gettext
+
+# Used as a decorator to run things in the background
+def _async(func):
+    def wrapper(*args, **kwargs):
+        thread = threading.Thread(target=func, args=args, kwargs=kwargs)
+        thread.daemon = True
+        thread.start()
+        return thread
+    return wrapper
+
+# Used as a decorator to run things in the main loop, from another thread
+def idle(func):
+    def wrapper(*args):
+        GLib.idle_add(func, *args)
+    return wrapper
+
+FINGER_NAMES = {}
+FINGER_NAMES["right-index-finger"] = _("Right index finger")
+FINGER_NAMES["right-middle-finger"] = _("Right middle finger")
+FINGER_NAMES["right-ring-finger"] = _("Right ring finger")
+FINGER_NAMES["right-little-finger"] = _("Right little finger")
+FINGER_NAMES["right-thumb"] = _("Right thumb")
+FINGER_NAMES["left-index-finger"] = _("Left index finger")
+FINGER_NAMES["left-middle-finger"] = _("Left middle finger")
+FINGER_NAMES["left-ring-finger"] = _("Left ring finger")
+FINGER_NAMES["left-little-finger"] = _("Left little finger")
+FINGER_NAMES["left-thumb"] = _("Left thumb")
+
+class Application(Gtk.Application):
+    # Main initialization routine
+    def __init__(self, application_id, flags):
+        Gtk.Application.__init__(self, application_id=application_id, flags=flags)
+        self.connect("activate", self.activate)
+
+    def activate(self, application):
+        windows = self.get_windows()
+        if (len(windows) > 0):
+            window = windows[0]
+            window.present()
+            window.show_all()
+        else:
+            window = Window(self)
+            self.add_window(window.window)
+            window.window.show_all()
+
+class Window():
+
+    def __init__(self, application):
+
+        self.application = application
+        self.settings = Gio.Settings(schema_id="org.x.fingwit")
+
+        # Set the Glade file
+        gladefile = "/usr/share/fingwit/fingwit.ui"
+        self.builder = Gtk.Builder()
+        self.builder.set_translation_domain(APP)
+        self.builder.add_from_file(gladefile)
+        self.window = self.builder.get_object("main_window")
+        self.window.set_title(_("Fingerprints"))
+        XApp.set_window_icon_name (self.window, "fingwit")
+
+        provider = Gtk.CssProvider()
+        provider.load_from_path("/usr/share/fingwit/fingwit.css")
+        screen = Gdk.Display.get_default_screen(Gdk.Display.get_default())
+        # I was unable to find instrospected version of this
+        Gtk.StyleContext.add_provider_for_screen(
+            screen, provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+
+        # Menubar
+        accel_group = Gtk.AccelGroup()
+        self.window.add_accel_group(accel_group)
+        menu = self.builder.get_object("main_menu")
+        self.disable_menu_item = Gtk.MenuItem()
+        self.disable_menu_item.set_label(_("Disable fingerprint authentication"))
+        self.disable_menu_item.connect("activate", self.disable_fprintd)
+        menu.append(self.disable_menu_item)
+        item = Gtk.MenuItem()
+        item.set_label(_("About"))
+        item.connect("activate", self.open_about)
+        key, mod = Gtk.accelerator_parse("F1")
+        item.add_accelerator("activate", accel_group, key, mod, Gtk.AccelFlags.VISIBLE)
+        menu.append(item)
+        item = Gtk.MenuItem(label=_("Quit"))
+        item.connect('activate', self.on_menu_quit)
+        key, mod = Gtk.accelerator_parse("<Control>Q")
+        item.add_accelerator("activate", accel_group, key, mod, Gtk.AccelFlags.VISIBLE)
+        key, mod = Gtk.accelerator_parse("<Control>W")
+        item.add_accelerator("activate", accel_group, key, mod, Gtk.AccelFlags.VISIBLE)
+        menu.append(item)
+        menu.show_all()
+
+        self.device = None
+        self.enabled = False
+        self.manager = None
+        self.finger = None
+        self.num_scans = 0
+
+        self.detect()
+
+        self.builder.get_object("button_enable").connect("clicked", self.enable_fprintd)
+        self.builder.get_object("button_delete").connect("clicked", self.delete_finger)
+        self.builder.get_object("button_add").connect("clicked", self.add_finger)
+        self.builder.get_object("button_cancel").connect("clicked", self.cancel)
+
+    def open_about(self, widget):
+        dlg = Gtk.AboutDialog()
+        dlg.set_transient_for(self.window)
+        dlg.set_title(_("About"))
+        dlg.set_program_name("Fingwit")
+        dlg.set_comments(_("Fingerprints configuration tool"))
+        try:
+            h = open('/usr/share/common-licenses/GPL', encoding="utf-8")
+            s = h.readlines()
+            gpl = ""
+            for line in s:
+                gpl += line
+            h.close()
+            dlg.set_license(gpl)
+        except Exception as e:
+            print (e)
+
+        dlg.set_version("__DEB_VERSION__")
+        dlg.set_icon_name("fingwit")
+        dlg.set_logo_icon_name("fingwit")
+        dlg.set_website("https://www.github.com/linuxmint/fingwit")
+        def close(w, res):
+            if res == Gtk.ResponseType.CANCEL or res == Gtk.ResponseType.DELETE_EVENT:
+                w.destroy()
+        dlg.connect("response", close)
+        dlg.show()
+
+    def on_menu_quit(self, widget):
+        self.application.quit()
+
+    def enable_fprintd(self, widget=None):
+        try:
+            subprocess.check_output(["pkexec", "pam-auth-update", "--package", "--enable", "fprintd"])
+        except:
+            pass
+        self.detect()
+
+    def disable_fprintd(self, widget=None):
+        try:
+            subprocess.check_output(["pkexec", "pam-auth-update", "--package", "--disable", "fprintd"])
+        except:
+            pass
+        self.detect()
+
+    def detect(self):
+        # Connect to the system bus
+        self.bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
+
+        # Connect to fprintd manager
+        self.manager = Gio.DBusProxy.new_sync(
+            self.bus,
+            Gio.DBusProxyFlags.NONE,
+            None,
+            'net.reactivated.Fprint',
+            '/net/reactivated/Fprint/Manager',
+            'net.reactivated.Fprint.Manager',
+            None
+        )
+
+        self.device = self.get_fingerprint_device()
+        self.enabled = self.check_pam_fprintd_enabled()
+        self.disable_menu_item.set_sensitive(self.enabled)
+
+        if not self.device:
+            self.builder.get_object("stack").set_visible_child_name("page_no_device")
+        elif not self.enabled:
+            self.builder.get_object("stack").set_visible_child_name("page_disabled")
+        else:
+            self.builder.get_object("stack").set_visible_child_name("page_devices")
+            fingers = self.list_enrolled_fingers()
+            self.flowbox = self.builder.get_object("flowbox")
+            for child in self.flowbox.get_children():
+                self.flowbox.remove(child)
+
+            for finger in FINGER_NAMES.keys():
+                enrolled = False
+                if finger in fingers:
+                    enrolled = True
+                finger_name = FINGER_NAMES[finger]
+                button = Gtk.Button()
+                button.get_style_context().add_class("fingwit-button")
+                box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+                box.set_spacing(0)
+                button.add(box)
+                button.set_relief(Gtk.ReliefStyle.NONE)
+                button.set_tooltip_text(finger_name)
+                button.connect("clicked", self.on_button_clicked, finger, finger_name, enrolled)
+                label = Gtk.Label()
+                # label.set_max_width_chars(25)
+                # label.set_ellipsize(Pango.EllipsizeMode.END)
+                label.set_halign(Gtk.Align.CENTER)
+                box.pack_end(label, False, False, 0)
+                image = Gtk.Image.new_from_icon_name("auth-fingerprint-symbolic", Gtk.IconSize.DIALOG)
+                image.set_halign(Gtk.Align.CENTER)
+                if enrolled:
+                    label.set_markup(f"<b>{finger_name}</b>")
+                    image.get_style_context().add_class("fingwit-image-active")
+                else:
+                    label.set_markup(f"{finger_name}")
+                    image.get_style_context().add_class("fingwit-image")
+                    box.get_style_context().add_class("dim-label")
+                box.pack_end(image, False, False, 0)
+
+                self.flowbox.add(button)
+                button.show_all()
+
+    def on_button_clicked(self, button, finger, finger_name, enrolled):
+        self.finger = finger
+        self.builder.get_object("stack").set_visible_child_name("page_finger")
+        self.builder.get_object("finger_label").set_label(finger_name)
+        self.builder.get_object("action_label").set_label("")
+        self.builder.get_object("button_delete").set_visible(enrolled)
+        self.builder.get_object("button_add").set_visible(not enrolled)
+
+    def cancel(self, button):
+        self.builder.get_object("stack").set_visible_child_name("page_devices")
+
+    def delete_finger(self, button):
+        if self.finger:
+            try:
+                self.claim_device()
+                self.device.call_sync(
+                    'DeleteEnrolledFinger',
+                    GLib.Variant('(s)', (self.finger,)),
+                    Gio.DBusCallFlags.NONE,
+                    -1,
+                    None
+                )
+            finally:
+                self.release_device()
+        self.detect()
+
+    def add_finger(self, button):
+        if self.finger:
+            # Hide the add button and show enrollment status
+            self.builder.get_object("button_add").set_visible(False)
+            self.builder.get_object("button_delete").set_visible(False)
+            self.start_enrollment()
+        else:
+            self.detect()
+
+    def start_enrollment(self):
+        try:
+            self.num_scans = 0
+            self.builder.get_object("action_label").set_markup(f"Place your finger on the scanner...")
+            self.claim_device()
+            self.device.connect('g-signal', self.on_enrollment_signal)            
+            self.device.call_sync(
+                'EnrollStart',
+                GLib.Variant('(s)', (self.finger,)),
+                Gio.DBusCallFlags.NONE,
+                -1,
+                None
+            )
+        except Exception as e:
+            print(f"Enrollment error: {e}")
+            self.enrollment_failed()
+
+    def on_enrollment_signal(self, proxy, sender_name, signal_name, parameters):
+        if signal_name == 'EnrollStatus':
+            status, done = parameters.unpack()    
+            if status == "enroll-completed":
+                self.builder.get_object("action_label").set_markup(_("Well done! Your fingerprint was saved successfully."))
+                self.stop_enrollment()
+                GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
+                
+            elif status == "enroll-stage-passed":
+                self.num_scans += 1 
+                self.builder.get_object("action_label").set_markup(_("Good scan (%d so far)! Do it again...") % self.num_scans)
+                
+            elif status == "enroll-remove-and-retry":
+                self.builder.get_object("action_label").set_markup(_("Try again..."))
+                
+            elif status == "enroll-failed":
+                self.builder.get_object("action_label").set_markup(_("Sorry, your fingerprint could not be saved."))
+                self.enrollment_failed()
+
+    def stop_enrollment(self):
+        try:
+            self.device.call_sync('EnrollStop', None, Gio.DBusCallFlags.NONE, -1, None)
+        except:
+            pass
+        self.release_device()
+
+    def enrollment_failed(self):
+        self.stop_enrollment()
+        GLib.timeout_add(2000, self.detect)
+
+    def claim_device(self):
+        try:
+            self.device.call_sync('Claim', GLib.Variant('(s)', (os.getenv('USER'),)), Gio.DBusCallFlags.NONE, -1, None) 
+        except:
+            pass
+
+    def release_device(self):
+        try:
+            self.device.call_sync('Release', None, Gio.DBusCallFlags.NONE, -1, None)
+        except:
+            pass
+
+    def get_fingerprint_device(self):
+        try:
+            # Get list of devices
+            devices = self.manager.call_sync('GetDevices', None, Gio.DBusCallFlags.NONE, -1, None)
+            device_paths = devices.unpack()[0]  # Returns array of object paths
+            print(f"Found {len(device_paths)} fingerprint device(s):")
+            for device_path in device_paths:
+                # Get device details
+                device = Gio.DBusProxy.new_sync(
+                    self.bus,
+                    Gio.DBusProxyFlags.NONE,
+                    None,
+                    'net.reactivated.Fprint',
+                    device_path,
+                    'net.reactivated.Fprint.Device',
+                    None
+                )
+
+                # Get device properties
+                name = device.get_cached_property('name')
+                scan_type = device.get_cached_property('scan-type')
+
+                print(f"  Device: {name.get_string() if name else 'Unknown'}")
+                print(f"  Type: {scan_type.get_string() if scan_type else 'Unknown'}")
+                print(f"  Path: {device_path}")
+
+                self.builder.get_object("headerbar").set_subtitle(name.get_string())
+
+                # return the first detected device
+                return device
+        except:
+            # We get an exception when there are no devices
+            pass
+        return None
+
+    def check_pam_fprintd_enabled(self):
+        try:
+            with open('/etc/pam.d/common-auth', 'r') as f:
+                content = f.read()
+                if 'pam_fprintd.so' in content:
+                    return True
+        except Exception as e:
+            print(e)
+        return False
+
+    def list_enrolled_fingers(self):
+        try:
+            username = os.getenv('USER')
+            result = self.device.call_sync(
+                'ListEnrolledFingers',
+                GLib.Variant('(s)', (username,)),
+                Gio.DBusCallFlags.NONE,
+                -1,
+                None
+            )
+            enrolled_fingers = result.unpack()[0]
+            return enrolled_fingers
+        except:
+            return []        
+
+if __name__ == "__main__":
+    application = Application("org.x.fingwit", Gio.ApplicationFlags.FLAGS_NONE)
+    application.run()
+

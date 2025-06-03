@@ -1,0 +1,18 @@
+Source: fingwit
+Section: misc
+Priority: optional
+Maintainer: Linux Mint <root@linuxmint.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+Rules-Requires-Root: no
+
+Package: fingwit
+Architecture: all
+Depends: python3,
+         python3-gi,
+         python3-setproctitle,
+         gir1.2-xapp-1.0 (>= 2.5.0),
+         libpam-fprintd,
+         ${misc:Depends}
+Description: Fingerprint Configuration Tool
+ Utility application used to configure fingerprint authentication.

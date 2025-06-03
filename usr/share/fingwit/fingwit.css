@@ -1,0 +1,30 @@
+/* Remove all the border and bg styling */
+.fingwit-button.flat,
+.fingwit-button.flat:hover,
+.fingwit-button.flat:active {
+	border: none;
+	background-image: none;
+	background-color: transparent;
+}
+
+.fingwit-image {
+	border-radius: 8px;
+	padding: 5px;
+	border: 1px solid @borders;
+	margin-bottom: 7px;
+}
+
+.fingwit-image-active {
+	border-radius: 8px;
+	padding: 5px;
+	border: 2px solid @success_color;
+	margin-bottom: 7px;
+}
+
+.fingwit-button:hover .fingwit-image {
+	box-shadow: 4px 4px 6px @borders;
+}
+
+.fingwit-button:hover .fingwit-image-active {
+	box-shadow: 4px 4px 6px @borders;
+}

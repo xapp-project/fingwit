@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+DOMAIN = "fingwit"
+PATH = "/usr/share/locale"
+
+import os
+import gettext
+from mintcommon import additionalfiles
+
+os.environ['LANGUAGE'] = "en_US.UTF-8"
+gettext.install(DOMAIN, PATH)
+
+prefix = "[Desktop Entry]\n"
+
+suffix = """Exec=fingwit
+Icon=fingwit
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=System;Settings;
+Keywords=finger;fingerprint;authentication
+StartupNotify=false
+"""
+
+additionalfiles.generate(DOMAIN, PATH, "usr/share/applications/fingwit.desktop", prefix, _("Fingerprints"), _("Fingerprints configuration tool"), suffix)
