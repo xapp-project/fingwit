@@ -1,3 +1,14 @@
+fingwit (1.0.1) zara; urgency=medium
+
+  * Add .gitignore
+  * About: Fix URL
+  * Update README.md
+  * build: Migrate to meson
+  * build: Add appimage build scripts
+  * Update README.md
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Jun 2025 15:26:44 +0200
+
 fingwit (1.0.0) zara; urgency=medium
 
   * Initial version
