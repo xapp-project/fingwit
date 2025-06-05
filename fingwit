@@ -271,7 +271,7 @@ class Window():
             self.num_scans = 0
             self.builder.get_object("action_label").set_markup(_("Place your finger on the scanner..."))
             self.claim_device()
-            self.device.connect('g-signal', self.on_enrollment_signal)            
+            self.device.connect('g-signal', self.on_enrollment_signal)
             self.device.call_sync(
                 'EnrollStart',
                 GLib.Variant('(s)', (self.finger,)),
@@ -285,19 +285,19 @@ class Window():
 
     def on_enrollment_signal(self, proxy, sender_name, signal_name, parameters):
         if signal_name == 'EnrollStatus':
-            status, done = parameters.unpack()    
+            status, done = parameters.unpack()
             if status == "enroll-completed":
                 self.builder.get_object("action_label").set_markup(_("Well done! Your fingerprint was saved successfully."))
                 self.stop_enrollment()
                 GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
-                
+
             elif status == "enroll-stage-passed":
-                self.num_scans += 1 
+                self.num_scans += 1
                 self.builder.get_object("action_label").set_markup(_("Good scan (%d so far)! Do it again...") % self.num_scans)
-                
+
             elif status == "enroll-remove-and-retry":
                 self.builder.get_object("action_label").set_markup(_("Try again..."))
-                
+
             elif status == "enroll-failed":
                 self.builder.get_object("action_label").set_markup(_("Sorry, your fingerprint could not be saved."))
                 self.enrollment_failed()
@@ -315,7 +315,7 @@ class Window():
 
     def claim_device(self):
         try:
-            self.device.call_sync('Claim', GLib.Variant('(s)', (os.getenv('USER'),)), Gio.DBusCallFlags.NONE, -1, None) 
+            self.device.call_sync('Claim', GLib.Variant('(s)', (os.getenv('USER'),)), Gio.DBusCallFlags.NONE, -1, None)
         except:
             pass
 
@@ -383,7 +383,7 @@ class Window():
             enrolled_fingers = result.unpack()[0]
             return enrolled_fingers
         except:
-            return []        
+            return []
 
 if __name__ == "__main__":
     application = Application("org.x.fingwit", Gio.ApplicationFlags.FLAGS_NONE)
