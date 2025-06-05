@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-05 15:36+0200\n"
+"POT-Creation-Date: 2025-06-05 16:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Fingerprints"
 msgstr ""
 
-#: data/fingwit.desktop.in:4 data/fingwit/fingwit.ui.h:10
+#: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
 msgstr ""
 
@@ -81,8 +81,8 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
-#: fingwit:133
-msgid "Fingerprints configuration tool"
+#: fingwit:272
+msgid "Place your finger on the scanner..."
 msgstr ""
 
 #: fingwit:290

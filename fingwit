@@ -130,7 +130,7 @@ class Window():
         dlg.set_transient_for(self.window)
         dlg.set_title(_("About"))
         dlg.set_program_name("Fingwit")
-        dlg.set_comments(_("Fingerprints configuration tool"))
+        dlg.set_comments(_("Fingerprint configuration tool"))
         try:
             h = open('/usr/share/common-licenses/GPL', encoding="utf-8")
             s = h.readlines()
@@ -269,7 +269,7 @@ class Window():
     def start_enrollment(self):
         try:
             self.num_scans = 0
-            self.builder.get_object("action_label").set_markup(f"Place your finger on the scanner...")
+            self.builder.get_object("action_label").set_markup(_("Place your finger on the scanner..."))
             self.claim_device()
             self.device.connect('g-signal', self.on_enrollment_signal)            
             self.device.call_sync(
