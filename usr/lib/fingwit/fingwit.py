@@ -145,7 +145,7 @@ class Window():
         dlg.set_version("__DEB_VERSION__")
         dlg.set_icon_name("fingwit")
         dlg.set_logo_icon_name("fingwit")
-        dlg.set_website("https://www.github.com/linuxmint/fingwit")
+        dlg.set_website("https://www.github.com/xapp-project/fingwit")
         def close(w, res):
             if res == Gtk.ResponseType.CANCEL or res == Gtk.ResponseType.DELETE_EVENT:
                 w.destroy()
