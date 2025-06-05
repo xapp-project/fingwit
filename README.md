@@ -1,5 +1,7 @@
 # Fingwit
 
+![shadow_fingwit](https://github.com/user-attachments/assets/7af684eb-8c78-4b3b-9e75-40e5730713c6)
+
 Fingwit is used to configure fingerprint authentication.
 
 It's an XApp so it can work in any distribution and many desktop environments.
