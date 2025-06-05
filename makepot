@@ -1,4 +1,6 @@
 #!/bin/bash
 intltool-extract --type=gettext/glade data/fingwit/fingwit.ui
-xgettext --language=Python --keyword=_ --keyword=N_ --output=fingwit.pot fingwit data/fingwit/fingwit.ui.h
+xgettext --language=Desktop --output=fingwit.pot data/fingwit.desktop.in
+xgettext --language=Python --join-existing --keyword=_ --keyword=N_ --output=fingwit.pot fingwit data/fingwit/fingwit.ui.h
+
 rm -f data/fingwit/*.ui.h

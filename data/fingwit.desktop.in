@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Fingerprints
-Comment=Fingerprints configuration tool
+Comment=Fingerprint configuration tool
 Exec=fingwit
 Icon=fingwit
 Terminal=false
