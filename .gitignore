@@ -1,0 +1,5 @@
+debian/fingwit/
+debian/*debhelper*
+debian/*substvar*
+debian/files
+usr/share/locale/*
