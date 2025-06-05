@@ -2,7 +2,8 @@ Source: fingwit
 Section: misc
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper-compat (= 13),
+               meson,
 Standards-Version: 3.9.6
 Rules-Requires-Root: no
 

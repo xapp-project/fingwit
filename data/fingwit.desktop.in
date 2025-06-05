@@ -7,5 +7,5 @@ Terminal=false
 Type=Application
 Encoding=UTF-8
 Categories=System;Settings;
-Keywords=finger;fingerprint;authentication
+Keywords=fingerprint;authentication;security;biometric;
 StartupNotify=false

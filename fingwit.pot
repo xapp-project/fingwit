@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-03 23:43+0100\n"
+"POT-Creation-Date: 2025-06-05 13:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,112 +17,111 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: usr/lib/fingwit/fingwit.py:39
+#: fingwit:39
 msgid "Right index finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:40
+#: fingwit:40
 msgid "Right middle finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:41
+#: fingwit:41
 msgid "Right ring finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:42
+#: fingwit:42
 msgid "Right little finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:43
+#: fingwit:43
 msgid "Right thumb"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:44
+#: fingwit:44
 msgid "Left index finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:45
+#: fingwit:45
 msgid "Left middle finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:46
+#: fingwit:46
 msgid "Left ring finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:47
+#: fingwit:47
 msgid "Left little finger"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:48
+#: fingwit:48
 msgid "Left thumb"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:80 generate_desktop_files:25
-#: usr/share/fingwit/fingwit.ui.h:9
+#: fingwit:80 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:97
+#: fingwit:97
 msgid "Disable fingerprint authentication"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:101 usr/lib/fingwit/fingwit.py:131
+#: fingwit:101 fingwit:131
 msgid "About"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:106
+#: fingwit:106
 msgid "Quit"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:133 generate_desktop_files:25
+#: fingwit:133
 msgid "Fingerprints configuration tool"
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:290
+#: fingwit:290
 msgid "Well done! Your fingerprint was saved successfully."
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:296
+#: fingwit:296
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:299
+#: fingwit:299
 msgid "Try again..."
 msgstr ""
 
-#: usr/lib/fingwit/fingwit.py:302
+#: fingwit:302
 msgid "Sorry, your fingerprint could not be saved."
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:1
+#: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:2
+#: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:3
+#: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:4
+#: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:5
+#: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:6
+#: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:7
+#: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
 msgstr ""
 
-#: usr/share/fingwit/fingwit.ui.h:8
+#: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
 msgstr ""

@@ -142,7 +142,7 @@ class Window():
         except Exception as e:
             print (e)
 
-        dlg.set_version("__DEB_VERSION__")
+        dlg.set_version("__PROJECT_VERSION__")
         dlg.set_icon_name("fingwit")
         dlg.set_logo_icon_name("fingwit")
         dlg.set_website("https://www.github.com/xapp-project/fingwit")

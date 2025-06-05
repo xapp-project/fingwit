@@ -1,4 +1,4 @@
 #!/bin/bash
-intltool-extract --type=gettext/glade usr/share/fingwit/fingwit.ui
-xgettext --language=Python --keyword=_ --keyword=N_ --output=fingwit.pot usr/lib/fingwit/*.py generate_desktop_files usr/share/fingwit/fingwit.ui.h
-rm -f usr/share/fingwit/*.ui.h
+intltool-extract --type=gettext/glade data/fingwit/fingwit.ui
+xgettext --language=Python --keyword=_ --keyword=N_ --output=fingwit.pot fingwit data/fingwit/fingwit.ui.h
+rm -f data/fingwit/*.ui.h

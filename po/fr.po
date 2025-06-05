@@ -1,0 +1,6 @@
+
+msgid "Fingerprints"
+msgstr "Empreintes digitales"
+
+msgid "Fingerprints configuration tool"
+msgstr "Outil de configuration des empreintes digitales"
