@@ -20,6 +20,9 @@ def pam_sm_authenticate(pamh, flags, argv):
         timeout = 30   # default
         debug = False
         
+        # ALWAYS print debug info to see what's happening
+        pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: starting authentication, args={argv}")
+        
         for arg in argv:
             if arg.startswith('max-tries='):
                 max_tries = int(arg.split('=')[1])
@@ -31,38 +34,50 @@ def pam_sm_authenticate(pamh, flags, argv):
         # Get username from PAM
         user = pamh.get_user()
         if not user:
+            pamh.conversation(pamh.PAM_TEXT_INFO, "fingwit: ERROR - no user found")
             return pamh.PAM_USER_UNKNOWN
         
+        pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: user={user}, service={os.environ.get('PAM_SERVICE', 'unknown')}")
+        
+        # Check all our detection functions and log results
+        ssh_session = is_ssh_session()
+        login_session = is_login_session()
+        encrypted_home = has_encrypted_home(user)
+        fprintd_available = is_fprintd_available()
+        has_prints = has_fingerprints(user)
+        
+        pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: ssh={ssh_session}, login={login_session}, encrypted={encrypted_home}")
+        pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: fprintd_avail={fprintd_available}, has_prints={has_prints}")
+        
         # Skip fingerprint auth for SSH sessions
-        if is_ssh_session():
-            if debug:
-                pamh.conversation(pamh.PAM_TEXT_INFO, "fingwit: skipping SSH session")
+        if ssh_session:
+            pamh.conversation(pamh.PAM_TEXT_INFO, "fingwit: SKIPPING - SSH session detected")
             return pamh.PAM_AUTHINFO_UNAVAIL
         
         # Check if this is a login session (where encrypted home matters)
-        if is_login_session() and has_encrypted_home(user):
-            if debug:
-                pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: skipping encrypted home for login session")
+        if login_session and encrypted_home:
+            pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: SKIPPING - encrypted home for login session")
             return pamh.PAM_AUTHINFO_UNAVAIL
         
         # Check if fprintd is available and running
-        if not is_fprintd_available():
-            if debug:
-                pamh.conversation(pamh.PAM_TEXT_INFO, "fingwit: fprintd not available")
+        if not fprintd_available:
+            pamh.conversation(pamh.PAM_TEXT_INFO, "fingwit: SKIPPING - fprintd not available")
             return pamh.PAM_AUTHINFO_UNAVAIL
         
         # Check if user has enrolled fingerprints
-        if not has_fingerprints(user):
-            if debug:
-                pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: no fingerprints for {user}")
+        if not has_prints:
+            pamh.conversation(pamh.PAM_TEXT_INFO, f"fingwit: SKIPPING - no fingerprints for {user}")
             return pamh.PAM_AUTHINFO_UNAVAIL
         
+        pamh.conversation(pamh.PAM_TEXT_INFO, "fingwit: PROCEEDING with fingerprint authentication")
         # Proceed with fingerprint authentication
         return do_fingerprint_auth(pamh, user, max_tries, timeout, debug)
         
     except Exception as e:
         # Log error and fall back to next auth method
-        pamh.conversation(pamh.PAM_ERROR_MSG, f"fingwit error: {e}")
+        pamh.conversation(pamh.PAM_ERROR_MSG, f"fingwit EXCEPTION: {e}")
+        import traceback
+        pamh.conversation(pamh.PAM_ERROR_MSG, f"fingwit traceback: {traceback.format_exc()}")
         return pamh.PAM_AUTHINFO_UNAVAIL
 
 def is_login_session():
