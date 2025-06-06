@@ -1,2 +1,3 @@
 usr/lib/*/security/pam_fingwit.so
 usr/lib/*/fingwit/pam_fingwit.py
+usr/share/pam-configs/fingwit
