@@ -23,10 +23,10 @@ custom_target('fingwit_versioned',
 pam_dep = dependency('pam', required: true)
 
 # PAM module directory
-pam_module_dir = join_paths(get_option('libdir'), 'security')
+pam_module_dir = join_paths(get_option('prefix'), get_option('libdir'), 'security')
 
 # Python script directory  
-pam_python_dir = join_paths(get_option('libdir'), 'fingwit')
+pam_python_dir = join_paths(get_option('prefix'), get_option('libdir'), 'fingwit')
 
 # Compile C wrapper to .so
 pam_fingwit_so = shared_library('pam_fingwit',
@@ -46,3 +46,9 @@ install_data('pam_fingwit.py',
 # Install translations
 subdir('data')
 subdir('po')
+
+summary({
+  'pam_module_dir': pam_module_dir,
+  'pam_python_dir': pam_python_dir,
+  'compiler': meson.get_compiler('c').get_id(),
+}, section: 'Configuration')
