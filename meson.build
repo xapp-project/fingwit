@@ -1,4 +1,4 @@
-project('fingwit', version : '1.0.1', meson_version : '>= 0.59.0')
+project('fingwit', 'c', version : '1.0.1', meson_version : '>= 0.59.0')
 
 # Python installation
 python = import('python').find_installation('python3')
@@ -19,9 +19,28 @@ custom_target('fingwit_versioned',
     install_mode: 'rwxr-xr-x'
 )
 
-# Install PAM module
-install_data('pam_fingwit',
-             install_dir: join_paths(prefix, 'lib', 'security'),
+# Build PAM module
+pam_dep = dependency('pam', required: true)
+
+# PAM module directory
+pam_module_dir = join_paths(get_option('libdir'), 'security')
+
+# Python script directory  
+pam_python_dir = join_paths(get_option('libdir'), 'fingwit')
+
+# Compile C wrapper to .so
+pam_fingwit_so = shared_library('pam_fingwit',
+    'pam_fingwit.c',
+    dependencies: [pam_dep],
+    name_prefix: '',
+    install: true,
+    install_dir: pam_module_dir,
+    c_args: ['-DPYTHON_SCRIPT_DIR="' + pam_python_dir + '"']
+)
+
+# Install Python script
+install_data('pam_fingwit.py',
+             install_dir: pam_python_dir,
              install_mode: 'rwxr-xr-x')
 
 # Install translations

@@ -1,0 +1,7 @@
+usr/bin/fingwit
+usr/share/applications/fingwit.desktop
+usr/share/icons/hicolor/scalable/apps/fingwit.svg
+usr/share/icons/hicolor/scalable/apps/fingwit-symbolic.svg
+usr/share/fingwit
+usr/share/glib-2.0/schemas/org.x.fingwit.gschema.xml
+usr/share/locale/fr/LC_MESSAGES/fingwit.mo
