@@ -157,14 +157,14 @@ class Window():
 
     def enable_fprintd(self, widget=None):
         try:
-            subprocess.check_output(["pkexec", "pam-auth-update", "--package", "--enable", "fprintd"])
+            subprocess.check_output(["pkexec", "pam-auth-update", "--package", "--enable", "fingwit"])
         except:
             pass
         self.detect()
 
     def disable_fprintd(self, widget=None):
         try:
-            subprocess.check_output(["pkexec", "pam-auth-update", "--package", "--disable", "fprintd"])
+            subprocess.check_output(["pkexec", "pam-auth-update", "--package", "--disable", "fingwit"])
         except:
             pass
         self.detect()
@@ -364,7 +364,7 @@ class Window():
         try:
             with open('/etc/pam.d/common-auth', 'r') as f:
                 content = f.read()
-                if 'pam_fprintd.so' in content:
+                if 'pam_fingwit.so' in content:
                     return True
         except Exception as e:
             print(e)

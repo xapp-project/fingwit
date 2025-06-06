@@ -1,0 +1,7 @@
+Name: Fingwit fingerprint authentication (using fprintd) with auto keyring unlocking.
+Default: no
+Priority: 260
+Conflicts: fprintd
+Auth-Type: Primary
+Auth:
+    [success=end default=ignore]    pam_fingwit.so max-tries=1 timeout=60 # debug

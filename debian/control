@@ -37,3 +37,13 @@ Description: Smart PAM module for fingerprint authentication
  .
  The module is self-contained with embedded Python logic for
  complex detection and D-Bus communication with fprintd.
+
+Package: libpam-fingwit-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libpam-fingwit (= ${binary:Version}), ${misc:Depends}
+Description: libpam-fingwit library - debug symbols
+ This package contains the symbols files needed to debug the fingwit pam module.
