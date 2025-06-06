@@ -11,9 +11,25 @@ Package: fingwit
 Architecture: all
 Depends: python3,
          python3-gi,
+         python3-pam,
          python3-setproctitle,
          gir1.2-xapp-1.0 (>= 2.5.0),
          libpam-fprintd,
-         ${misc:Depends}
+         ${misc:Depends},
+         libpam-fingwit (= ${binary:Version})
 Description: Fingerprint Configuration Tool
  Utility application used to configure fingerprint authentication.
+
+Package: libpam-fingwit
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         python3,
+         python3-gi,
+         fprintd
+Description: Smart PAM module for fingerprint authentication
+ This PAM module is used in combination with pam_fprintd.so.
+ .
+  * It returns PAM_AUTHINFO_UNAVAIL when fprintd should be skipped (ssh sessions, login with encrypted home dirs..)
+  * It returns PAM_IGNORE when auth can be performed by fprintd.
+ .
