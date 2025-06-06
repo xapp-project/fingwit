@@ -19,6 +19,11 @@ custom_target('fingwit_versioned',
     install_mode: 'rwxr-xr-x'
 )
 
+# Install PAM module
+install_data('pam_fingwit',
+             install_dir: join_paths(prefix, 'lib', 'security'),
+             install_mode: 'rwxr-xr-x')
+
 # Install translations
 subdir('data')
 subdir('po')
