@@ -7,6 +7,7 @@ python = import('python').find_installation('python3')
 prefix = get_option('prefix')
 bindir = get_option('bindir')
 datadir = get_option('datadir')
+libdir = get_option('libdir')
 libexecdir = get_option('libexecdir')
 
 custom_target('fingwit_versioned',
@@ -22,11 +23,18 @@ custom_target('fingwit_versioned',
 # Build PAM module
 pam_dep = dependency('pam', required: true)
 
-# PAM module directory
-pam_module_dir = join_paths(get_option('prefix'), get_option('libdir'), 'security')
+# PAM configs directory
+pam_config_dir = join_paths(get_option('prefix'), datadir, 'pam-configs')
+# Install pam config
+install_data('fingwit.pam_config',
+    rename: 'fingwit',
+    install_dir: pam_config_dir
+)
 
 # Python script directory  
-pam_python_dir = join_paths(get_option('prefix'), get_option('libdir'), 'fingwit')
+pam_python_dir = join_paths(get_option('prefix'), libdir, 'fingwit')
+# PAM module directory
+pam_module_dir = join_paths(get_option('prefix'), libdir, 'security')
 
 # Compile C wrapper to .so
 pam_fingwit_so = shared_library('pam_fingwit',
@@ -40,8 +48,9 @@ pam_fingwit_so = shared_library('pam_fingwit',
 
 # Install Python script
 install_data('pam_fingwit.py',
-             install_dir: pam_python_dir,
-             install_mode: 'rwxr-xr-x')
+    install_dir: pam_python_dir,
+    install_mode: 'rwxr-xr-x'
+)
 
 # Install translations
 subdir('data')

@@ -1,4 +1,6 @@
-debian/fingwit/
+debian/tmp
+debian/fingwit
+debian/libpam-fingwit
 debian/*debhelper*
 debian/*substvar*
 debian/files
