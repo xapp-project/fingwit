@@ -62,11 +62,8 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, cons
         if (WIFEXITED(status)) {
             int exit_code = WEXITSTATUS(status);
             switch (exit_code) {
-                case 0: return PAM_SUCCESS;
-                case 7: return PAM_AUTH_ERR;
-                case 9: return PAM_AUTHINFO_UNAVAIL;
-                case 10: return PAM_USER_UNKNOWN;
-                default: return PAM_AUTHINFO_UNAVAIL;
+                case PAM_AUTHINFO_UNAVAIL: return PAM_AUTHINFO_UNAVAIL;
+                default: return PAM_IGNORE;
             }
         }
     } else {

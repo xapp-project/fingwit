@@ -11,6 +11,7 @@ Package: fingwit
 Architecture: all
 Depends: python3,
          python3-gi,
+         python3-pam,
          python3-setproctitle,
          gir1.2-xapp-1.0 (>= 2.5.0),
          libpam-fprintd,
@@ -27,13 +28,8 @@ Depends: ${misc:Depends},
          python3-gi,
          fprintd
 Description: Smart PAM module for fingerprint authentication
- This PAM module provides intelligent fingerprint authentication
- that automatically:
+ This PAM module is used in combination with pam_fprintd.so.
  .
-  * Skips fingerprint auth for users with encrypted home directories
-    during login (but allows it for sudo/unlock)
-  * Avoids interference with SSH sessions
-  * Falls back gracefully when hardware is unavailable
+  * It returns PAM_AUTHINFO_UNAVAIL when fprintd should be skipped (ssh sessions, login with encrypted home dirs..)
+  * It returns PAM_IGNORE when auth can be performed by fprintd.
  .
- The module is self-contained with embedded Python logic for
- complex detection and D-Bus communication with fprintd.
