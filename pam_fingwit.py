@@ -57,15 +57,16 @@ def pam_sm_authenticate(pamh, flags, argv):
             return pamh.PAM_AUTHINFO_UNAVAIL
                 
         if debug:
-            syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PROCEEDING with fingerprint authentication")
+            syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: returning PAM_SUCCESS")
         
-        # Everything looks fine, proceed to the next PAM module
-        return pamh.PAM_IGNORE
+        # # Everything looks fine, proceed to the next PAM module
+        return pamh.PAM_SUCCESS
         
     except Exception as e:
         # Log error and fall back to next auth method
         pamh.conversation(pamh.PAM_ERROR_MSG, f"fingwit EXCEPTION: {e}")
-        return pamh.PAM_IGNORE
+        # If anything happens, return SUCCESS, ignore by PAM configuration.
+        return pamh.PAM_SUCCESS
 
 
 def is_login_session():
@@ -121,8 +122,8 @@ def is_ssh_session():
         pass
     
     # Check if stdin is not a tty (non-interactive)
-    if not os.isatty(0):
-        return True
+    # if not os.isatty(0):
+    #     return True
         
     return False
 
