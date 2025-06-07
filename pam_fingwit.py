@@ -43,13 +43,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         ssh_session = is_ssh_session()
         login_session = is_login_session()
         encrypted_home = has_encrypted_home(user)
-        fprintd_available = is_fprintd_available()
-        has_prints = has_fingerprints(user)
-        
-        if debug:
-            syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: ssh={ssh_session}, login={login_session}, encrypted={encrypted_home}")
-            syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: fprintd_avail={fprintd_available}, has_prints={has_prints}")
-        
+                
         # Skip fingerprint auth for SSH sessions
         if ssh_session:
             if debug:
@@ -61,265 +55,18 @@ def pam_sm_authenticate(pamh, flags, argv):
             if debug:
                 syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: SKIPPING - encrypted home for login session")
             return pamh.PAM_AUTHINFO_UNAVAIL
-        
-        # Check if fprintd is available and running
-        if not fprintd_available:
-            if debug:
-                syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: SKIPPING - fprintd not available")
-            return pamh.PAM_AUTHINFO_UNAVAIL
-        
-        # Check if user has enrolled fingerprints
-        if not has_prints:
-            if debug:
-                syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: SKIPPING - no fingerprints for {user}")
-            return pamh.PAM_AUTHINFO_UNAVAIL
-        
+                
         if debug:
             syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PROCEEDING with fingerprint authentication")
         
-        # Proceed with fingerprint authentication using proper D-Bus
-        return do_fingerprint_auth_dbus(pamh, user, max_tries, timeout, debug)
+        # Everything looks fine, proceed to the next PAM module
+        return pamh.PAM_IGNORE
         
     except Exception as e:
         # Log error and fall back to next auth method
         pamh.conversation(pamh.PAM_ERROR_MSG, f"fingwit EXCEPTION: {e}")
-        return pamh.PAM_AUTHINFO_UNAVAIL
+        return pamh.PAM_IGNORE
 
-def do_fingerprint_auth_dbus(pamh, user, max_tries=3, timeout=30, debug=False):
-    """Perform fingerprint authentication using D-Bus like official fprintd PAM module"""
-    
-    class FingerprintAuth:
-        def __init__(self, pamh, user, debug=False):
-            self.pamh = pamh
-            self.user = user
-            self.debug = debug
-            self.result = None
-            self.finished = False
-            self.loop = None
-            self.device = None
-            self.bus = None
-            self.device_path = None
-            
-        def authenticate(self, timeout_seconds):
-            """Main authentication method - mirrors fprintd PAM module logic"""
-            try:
-                # Get system bus
-                self.bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-                
-                # Get fingerprint manager
-                manager = Gio.DBusProxy.new_sync(
-                    self.bus, 
-                    Gio.DBusProxyFlags.NONE, 
-                    None,
-                    'net.reactivated.Fprint',
-                    '/net/reactivated/Fprint/Manager',
-                    'net.reactivated.Fprint.Manager',
-                    None
-                )
-                
-                # Get default device (like fprintd PAM module does)
-                try:
-                    default_device_result = manager.call_sync(
-                        'GetDefaultDevice', 
-                        None, 
-                        Gio.DBusCallFlags.NONE, 
-                        -1, 
-                        None
-                    )
-                    self.device_path = default_device_result.unpack()[0]
-                except:
-                    # Fallback: get first available device
-                    devices_result = manager.call_sync(
-                        'GetDevices', 
-                        None, 
-                        Gio.DBusCallFlags.NONE, 
-                        -1, 
-                        None
-                    )
-                    device_paths = devices_result.unpack()[0]
-                    if not device_paths:
-                        self.result = 'NO_DEVICE'
-                        return
-                    self.device_path = device_paths[0]
-                
-                # Create device proxy
-                self.device = Gio.DBusProxy.new_sync(
-                    self.bus, 
-                    Gio.DBusProxyFlags.NONE, 
-                    None,
-                    'net.reactivated.Fprint',
-                    self.device_path,
-                    'net.reactivated.Fprint.Device',
-                    None
-                )
-                
-                # Connect to signals BEFORE claiming device
-                self.device.connect('g-signal', self._on_signal)
-                
-                # Claim device for this user
-                self.device.call_sync(
-                    'Claim', 
-                    GLib.Variant('(s)', (self.user,)), 
-                    Gio.DBusCallFlags.NONE, 
-                    -1, 
-                    None
-                )
-                
-                if self.debug:
-                    syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: Device claimed for user {self.user}")
-                
-                # Start verification with 'any' finger (like fprintd PAM module)
-                self.device.call_sync(
-                    'VerifyStart', 
-                    GLib.Variant('(s)', ('any',)), 
-                    Gio.DBusCallFlags.NONE, 
-                    -1, 
-                    None
-                )
-                
-                if self.debug:
-                    syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: Verification started")
-                
-                # Create and run main loop with timeout
-                self.loop = GLib.MainLoop()
-                GLib.timeout_add_seconds(timeout_seconds, self._on_timeout)
-                
-                # This blocks until verification completes or times out
-                self.loop.run()
-                
-                return self.result
-                
-            except Exception as e:
-                if self.debug:
-                    syslog.syslog(syslog.LOG_ERR, f"pam_fingwit: D-Bus auth error: {e}")
-                self.result = f'ERROR: {e}'
-                return self.result
-            finally:
-                self._cleanup()
-                
-        def _on_signal(self, proxy, sender_name, signal_name, parameters):
-            """Handle D-Bus signals from fingerprint device"""
-            if signal_name == 'VerifyStatus':
-                status, done = parameters.unpack()
-                
-                if self.debug:
-                    syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: VerifyStatus: {status}, done: {done}")
-                
-                if status == 'verify-match':
-                    self.result = 'SUCCESS'
-                    self._quit_loop()
-                elif status == 'verify-no-match':
-                    self.result = 'NO_MATCH'
-                    # Don't quit yet - let it try again or timeout
-                elif status == 'verify-swipe-too-short':
-                    self.result = 'SWIPE_TOO_SHORT'
-                    # Don't quit yet
-                elif status == 'verify-finger-not-centered':
-                    self.result = 'NOT_CENTERED'
-                    # Don't quit yet
-                elif status == 'verify-remove-and-retry':
-                    self.result = 'REMOVE_RETRY'
-                    # Don't quit yet
-                elif status.startswith('verify-'):
-                    # Other verify statuses - continue
-                    pass
-                else:
-                    # Unknown status
-                    if self.debug:
-                        syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: Unknown verify status: {status}")
-                
-                # If done flag is set, finish verification
-                if done:
-                    if not self.result or self.result in ['NO_MATCH', 'SWIPE_TOO_SHORT', 'NOT_CENTERED', 'REMOVE_RETRY']:
-                        self.result = 'FAILED'
-                    self._quit_loop()
-                    
-        def _on_timeout(self):
-            """Handle timeout"""
-            if not self.finished:
-                if self.debug:
-                    syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: Authentication timed out")
-                self.result = 'TIMEOUT'
-                self._quit_loop()
-            return False  # Don't repeat timeout
-            
-        def _quit_loop(self):
-            """Quit the main loop"""
-            self.finished = True
-            if self.loop and self.loop.is_running():
-                self.loop.quit()
-                
-        def _cleanup(self):
-            """Clean up D-Bus resources"""
-            try:
-                if self.device and self.device_path:
-                    # Stop verification
-                    try:
-                        self.device.call_sync(
-                            'VerifyStop', 
-                            None, 
-                            Gio.DBusCallFlags.NONE, 
-                            1000, 
-                            None
-                        )
-                    except:
-                        pass
-                    
-                    # Release device
-                    try:
-                        self.device.call_sync(
-                            'Release', 
-                            None, 
-                            Gio.DBusCallFlags.NONE, 
-                            1000, 
-                            None
-                        )
-                    except:
-                        pass
-                        
-                    if self.debug:
-                        syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: Device released")
-                        
-            except Exception as e:
-                if self.debug:
-                    syslog.syslog(syslog.LOG_ERR, f"pam_fingwit: Cleanup error: {e}")
-    
-    # Prompt user
-    pamh.conversation(pamh.PAM_TEXT_INFO, "Place your finger on the fingerprint reader")
-    
-    for attempt in range(max_tries):
-        if debug:
-            syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: attempt {attempt + 1}/{max_tries}")
-        
-        # Create authenticator and run
-        auth = FingerprintAuth(pamh, user, debug)
-        result = auth.authenticate(timeout)
-        
-        if result == 'SUCCESS':
-            pamh.conversation(pamh.PAM_TEXT_INFO, "Fingerprint authentication successful")
-            return pamh.PAM_SUCCESS
-        elif result == 'NO_DEVICE':
-            pamh.conversation(pamh.PAM_ERROR_MSG, "No fingerprint device available")
-            return pamh.PAM_AUTHINFO_UNAVAIL
-        elif result == 'TIMEOUT':
-            pamh.conversation(pamh.PAM_ERROR_MSG, f"Fingerprint authentication timed out after {timeout}s")
-            break
-        elif result and result.startswith('ERROR'):
-            pamh.conversation(pamh.PAM_ERROR_MSG, f"Fingerprint authentication error: {result}")
-            return pamh.PAM_AUTH_ERR
-        elif attempt < max_tries - 1:
-            # Provide specific feedback based on result
-            if result == 'SWIPE_TOO_SHORT':
-                pamh.conversation(pamh.PAM_ERROR_MSG, "Swipe was too short, try again")
-            elif result == 'NOT_CENTERED':
-                pamh.conversation(pamh.PAM_ERROR_MSG, "Finger not centered, try again")
-            elif result == 'REMOVE_RETRY':
-                pamh.conversation(pamh.PAM_ERROR_MSG, "Remove finger and try again")
-            else:
-                pamh.conversation(pamh.PAM_ERROR_MSG, "Try again...")
-    
-    pamh.conversation(pamh.PAM_ERROR_MSG, "Fingerprint authentication failed")
-    return pamh.PAM_AUTH_ERR
 
 def is_login_session():
     """Check if this is an initial login session (where home decryption matters)"""
@@ -392,75 +139,6 @@ def has_encrypted_home(user):
             return True
     return False
 
-def is_fprintd_available():
-    """Check if fprintd service is available via D-Bus"""
-    try:
-        bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-        manager = Gio.DBusProxy.new_sync(
-            bus,
-            Gio.DBusProxyFlags.NONE,
-            None,
-            'net.reactivated.Fprint',
-            '/net/reactivated/Fprint/Manager',
-            'net.reactivated.Fprint.Manager',
-            None
-        )
-        # Try to get devices to verify service is working
-        devices = manager.call_sync('GetDevices', None, Gio.DBusCallFlags.NONE, 1000, None)
-        return len(devices.unpack()[0]) > 0
-    except:
-        return False
-
-def has_fingerprints(user):
-    """Check if user has enrolled fingerprints via D-Bus"""
-    try:
-        bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-        manager = Gio.DBusProxy.new_sync(
-            bus,
-            Gio.DBusProxyFlags.NONE,
-            None,
-            'net.reactivated.Fprint',
-            '/net/reactivated/Fprint/Manager',
-            'net.reactivated.Fprint.Manager',
-            None
-        )
-        
-        # Try to get default device first
-        try:
-            device_result = manager.call_sync('GetDefaultDevice', None, Gio.DBusCallFlags.NONE, 1000, None)
-            device_path = device_result.unpack()[0]
-        except:
-            # Fallback to first device
-            devices = manager.call_sync('GetDevices', None, Gio.DBusCallFlags.NONE, 1000, None)
-            device_paths = devices.unpack()[0]
-            if not device_paths:
-                return False
-            device_path = device_paths[0]
-        
-        # Get device proxy
-        device = Gio.DBusProxy.new_sync(
-            bus,
-            Gio.DBusProxyFlags.NONE,
-            None,
-            'net.reactivated.Fprint',
-            device_path,
-            'net.reactivated.Fprint.Device',
-            None
-        )
-        
-        # List enrolled fingers for user
-        fingers = device.call_sync(
-            'ListEnrolledFingers', 
-            GLib.Variant('(s)', (user,)), 
-            Gio.DBusCallFlags.NONE, 
-            2000, 
-            None
-        )
-        return len(fingers.unpack()[0]) > 0
-        
-    except:
-        return False
-
 # Required PAM module functions
 def pam_sm_setcred(pamh, flags, argv):
     """Set credentials (not needed for authentication)"""
@@ -490,6 +168,7 @@ if __name__ == "__main__":
             PAM_AUTHINFO_UNAVAIL = 9
             PAM_TEXT_INFO = 3
             PAM_ERROR_MSG = 4
+            PAM_IGNORE = 25
             
             def get_user(self):
                 return user
@@ -517,6 +196,7 @@ if __name__ == "__main__":
             PAM_AUTHINFO_UNAVAIL = 9
             PAM_TEXT_INFO = 3
             PAM_ERROR_MSG = 4
+            PAM_IGNORE = 25
             
             def get_user(self):
                 return pwd.getpwuid(os.getuid()).pw_name
@@ -558,8 +238,6 @@ if __name__ == "__main__":
         print(f"SSH session: {is_ssh_session()}")
         print(f"Login session: {is_login_session()}")
         print(f"Encrypted home: {has_encrypted_home(user)}")
-        print(f"fprintd available: {is_fprintd_available()}")
-        print(f"Has fingerprints: {has_fingerprints(user)}")
         
         # Run all tests
         run_test("TEST 1: Current context (desktop session)")
