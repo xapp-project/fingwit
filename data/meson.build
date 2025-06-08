@@ -13,6 +13,8 @@ schema_file = install_data(
     'org.x.fingwit.gschema.xml',
     install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
 )
+meson.add_install_script('meson_install_schemas.py')
+
 
 # Desktop file with translations using standard meson i18n
 i18n = import('i18n')

@@ -31,7 +31,7 @@ install_data('fingwit.pam_config',
     install_dir: pam_config_dir
 )
 
-# Python script directory  
+# Python script directory
 pam_python_dir = join_paths(get_option('prefix'), libdir, 'fingwit')
 # PAM module directory
 pam_module_dir = join_paths(get_option('prefix'), libdir, 'security')
