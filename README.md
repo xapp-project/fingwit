@@ -33,6 +33,12 @@ If `pam_fingwit.so` thinks fingerprint authentication is safe, it returns `ignor
 
 If `pam_fingwit.so` thinks fingerprint authentication should be avoided, it returns `authinfo_unavail` and tells PAM to skip `pam_fprintd.so`.
 
+## Debugging the PAM module
+
+`pam_fingwit.so` supports a `debug` option.
+
+If you enable this option in your PAM configuration, the module will write its debug output in system logs. Check your `auth.log` or `journalctl`.
+
 # Dependencies
 
 ## Runtime Dependencies
