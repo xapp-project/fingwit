@@ -18,6 +18,16 @@ meson setup appimage/builddir --prefix=/usr
 meson compile -C appimage/builddir
 DESTDIR=$PWD/appimage/AppDir meson install -C appimage/builddir
 
+# Compile GSettings schemas for AppImage
+echo "Compiling GSettings schemas for AppImage..."
+if [ -d "appimage/AppDir/usr/share/glib-2.0/schemas" ]; then
+    glib-compile-schemas appimage/AppDir/usr/share/glib-2.0/schemas/
+    echo "Schemas compiled successfully"
+    ls -la appimage/AppDir/usr/share/glib-2.0/schemas/
+else
+    echo "Warning: No schemas directory found"
+fi
+
 echo "Creating AppRun script..."
 # Create AppRun script
 cat > appimage/AppDir/AppRun << 'EOF'

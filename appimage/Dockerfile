@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     gir1.2-gtk-3.0 \
     gettext \
     desktop-file-utils \
+    libglib2.0-bin \
     wget \
     file \
     fuse \
