@@ -10,11 +10,35 @@ It's an XApp so it can work in any distribution and many desktop environments.
 
 An AppImage for fingwit is available in the releases section.
 
+# PAM Configuration
+
+Fingwit uses two PAM modules:
+
+- Its own module: `pam_fingwit.so`
+- Fprint's module: `pam_fprintd.so`
+
+`pam_fprintd.so` performs the fingerprint authentication.
+
+`pam_fingwit.so` decides when it's safe for the computer to use `pam_fprintd.so` and when it's better to skip it (for instance when you try to log in with an encrypted home directory).
+
+A typical PAM configuration therefore looks like this:
+
+```
+auth	[authinfo_unavail=1 default=ignore]	pam_fingwit.so # debug
+auth	[success=end default=ignore]	pam_fprintd.so max-tries=1 timeout=10 # debug
+auth	[success=1 default=ignore]	pam_unix.so nullok
+```
+
+If `pam_fingwit.so` thinks fingerprint authentication is safe, it returns `ignore` and lets PAM proceed towards `pam_fprintd.so`.
+
+If `pam_fingwit.so` thinks fingerprint authentication should be avoided, it returns `authinfo_unavail` and tells PAM to skip `pam_fprintd.so`.
+
 # Dependencies
 
 ## Runtime Dependencies
 - python3
 - python3-gi
+- python3-pam
 - gir1.2-gtk-3.0
 - fprintd
 - libpam-fprintd
