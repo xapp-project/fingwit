@@ -6,6 +6,12 @@ Fingwit is used to configure fingerprint authentication.
 
 It's an XApp so it can work in any distribution and many desktop environments.
 
+# Support fingerprint readers
+
+Fingwit relies on Fprintd.
+
+Here's the list of supported fingerprint readers: https://fprint.freedesktop.org/supported-devices.html.
+
 # AppImage
 
 An AppImage for fingwit is available in the releases section.
