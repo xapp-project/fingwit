@@ -1,0 +1,6 @@
+
+msgid "Fingerprints"
+msgstr "Відбитки пальців"
+
+msgid "Fingerprints configuration tool"
+msgstr "Інструмент налаштування відбитків пальців"
