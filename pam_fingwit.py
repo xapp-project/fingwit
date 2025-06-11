@@ -37,7 +37,7 @@ def pam_sm_authenticate(pamh, flags, argv):
                 syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_AUTHINFO_UNAVAIL (SSH session)")
             return PAM.PAM_AUTHINFO_UNAVAIL
         
-        if user_has_sessions(user):
+        if user_has_session(user):
             if debug:
                 syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_IGNORE (session already exists)")
             return PAM.PAM_IGNORE
@@ -118,18 +118,32 @@ def is_ssh_session():
         
     return False
 
-def user_has_sessions(user):
+def user_has_session(user):
     try:
-        # Get user sessions from loginctl
-        result = subprocess.run(['loginctl', 'list-sessions', '--output=json'], 
-                              capture_output=True, text=True)
-        if result.returncode == 0:
-            sessions = json.loads(result.stdout)
-            for session in sessions:
-                if session.get('user') == user:
+        bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
+        proxy = Gio.DBusProxy.new_sync(
+            bus,
+            Gio.DBusProxyFlags.NONE,
+            None,
+            'org.freedesktop.login1',
+            '/org/freedesktop/login1',
+            'org.freedesktop.login1.Manager',
+            None
+        )
+
+        # Get all sessions
+        sessions = proxy.call_sync('ListSessions', GLib.Variant.new_tuple(), Gio.DBusCallFlags.NONE, -1, None)
+        session_list = sessions.unpack()[0]
+
+        # Check if user has an active session and seat
+        for session in session_list:
+            if session[2] == user:  #  session[2] is the username
+                if session[3] != "": # session[3] is the seat id (ssh logins won't have one, ignore them)
                     return True
-    except (subprocess.CalledProcessError, json.JSONDecodeError, FileNotFoundError):
-        pass
+
+    except Exception as e:
+        syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: Error checking for existing user session: {e}")
+
     return False
 
 def has_encrypted_home(user):
@@ -217,7 +231,7 @@ if __name__ == "__main__":
         print(f"SSH session: {is_ssh_session()}")
         print(f"Login session: {is_login_session()}")
         print(f"Encrypted home: {has_encrypted_home(user)}")
-        print(f"Has sessions: {user_has_sessions(user)}")
+        print(f"Has sessions: {user_has_session(user)}")
         
         # Run all tests
         run_test("TEST 1: Current context (desktop session)")
