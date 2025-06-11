@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+import gi
+import json
 import os
+import PAM
+import subprocess
 import sys
 import syslog
-import gi
-import PAM
 gi.require_version('Gio', '2.0')
 gi.require_version('GLib', '2.0')
 from gi.repository import Gio, GLib
@@ -15,6 +17,8 @@ def pam_sm_authenticate(pamh, flags, argv):
     syslog.openlog("pam_fingwit", syslog.LOG_PID, syslog.LOG_AUTHPRIV)
     
     try:
+        settings = Gio.Settings(schema_id="org.x.fingwit")
+
         # Parse PAM module arguments
         debug = False
         
@@ -33,11 +37,22 @@ def pam_sm_authenticate(pamh, flags, argv):
                 syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_AUTHINFO_UNAVAIL (SSH session)")
             return PAM.PAM_AUTHINFO_UNAVAIL
         
-        # Check if this is a login session (where encrypted home matters)
-        if is_login_session() and has_encrypted_home(user):
+        if user_has_sessions(user):
             if debug:
-                syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: PAM_AUTHINFO_UNAVAIL (encrypted home for login session)")
-            return PAM.PAM_AUTHINFO_UNAVAIL
+                syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_IGNORE (session already exists)")
+            return PAM.PAM_IGNORE
+
+        # Check if this is a login session
+        if is_login_session():
+            if not settings.get_boolean("login-enabled"):
+                if debug:
+                    syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_AUTHINFO_UNAVAIL (login, password required)")
+                return PAM.PAM_AUTHINFO_UNAVAIL
+            
+            if has_encrypted_home(user):
+                if debug:
+                    syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: PAM_AUTHINFO_UNAVAIL (login, encrypted home)")
+                return PAM.PAM_AUTHINFO_UNAVAIL
     
         # Everything looks fine, proceed to the next PAM module        
         if debug:
@@ -101,6 +116,20 @@ def is_ssh_session():
     except:
         pass
         
+    return False
+
+def user_has_sessions(user):
+    try:
+        # Get user sessions from loginctl
+        result = subprocess.run(['loginctl', 'list-sessions', '--output=json'], 
+                              capture_output=True, text=True)
+        if result.returncode == 0:
+            sessions = json.loads(result.stdout)
+            for session in sessions:
+                if session.get('user') == user:
+                    return True
+    except (subprocess.CalledProcessError, json.JSONDecodeError, FileNotFoundError):
+        pass
     return False
 
 def has_encrypted_home(user):
@@ -188,6 +217,7 @@ if __name__ == "__main__":
         print(f"SSH session: {is_ssh_session()}")
         print(f"Login session: {is_login_session()}")
         print(f"Encrypted home: {has_encrypted_home(user)}")
+        print(f"Has sessions: {user_has_sessions(user)}")
         
         # Run all tests
         run_test("TEST 1: Current context (desktop session)")
