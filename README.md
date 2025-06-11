@@ -39,6 +39,14 @@ If `pam_fingwit.so` thinks fingerprint authentication is safe, it returns `ignor
 
 If `pam_fingwit.so` thinks fingerprint authentication should be avoided, it returns `authinfo_unavail` and tells PAM to skip `pam_fprintd.so`.
 
+## Conditions/applications where fingerprint authentication is allowed:
+- policykit/pkexec situations.
+- Screensaver unlocking.
+- Login greeter *only* if the user already has a session (such as when switching between users).
+## Conditions where fingerprint authentication is NOT allowed:
+- Initial login (after reboot/power-on). The user keyring requires a password to unlock, as does decrypting a user's home directory. This can be overridden in gsettings for the root user (`gsettings set org.x.fingwit login-enabled true`).
+- SSH sessions 
+
 ## Debugging the PAM module
 
 `pam_fingwit.so` supports a `debug` option.
