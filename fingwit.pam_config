@@ -5,4 +5,4 @@ Conflicts: fprintd
 Auth-Type: Primary
 Auth:
     [authinfo_unavail=1 default=ignore] pam_fingwit.so # debug
-    [success=end default=ignore]    pam_fprintd.so max-tries=1 timeout=10 # debug
+    [success=end default=ignore]    pam_fprintd.so max-tries=1 timeout=15 # debug
