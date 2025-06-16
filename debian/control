@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends: debhelper-compat (= 13),
                meson,
+               libpam0g-dev,
 Standards-Version: 3.9.6
 Rules-Requires-Root: no
 
