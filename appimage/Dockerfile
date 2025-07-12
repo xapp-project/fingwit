@@ -1,5 +1,5 @@
 # Use Ubuntu for AppImage compatibility
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y \
@@ -14,19 +14,20 @@ RUN apt-get update && apt-get install -y \
     wget \
     file \
     fuse \
+    pkg-config \
+    libpam0g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Create build user (AppImage tools work better as non-root)
-RUN useradd -m -u 1000 builder
-USER builder
-WORKDIR /home/builder
+# AppImage tools work better as non-root
+USER 1000
+WORKDIR /home/ubuntu
 
 # Download appimagetool
 RUN wget -O appimagetool https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage && \
     chmod +x appimagetool
 
 # Set up the build script
-COPY --chown=builder:builder build-appimage-docker.sh /home/builder/
+COPY --chown=1000:1000 build-appimage-docker.sh /home/ubuntu/
 RUN chmod +x build-appimage-docker.sh
 
 # Entry point

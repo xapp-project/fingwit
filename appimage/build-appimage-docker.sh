@@ -50,7 +50,7 @@ cp appimage/AppDir/usr/share/icons/hicolor/scalable/apps/fingwit.svg appimage/Ap
 echo "Creating AppImage..."
 # Create AppImage using the pre-downloaded appimagetool with explicit architecture
 cd appimage
-ARCH=x86_64 /home/builder/appimagetool --appimage-extract-and-run AppDir fingwit.AppImage
+ARCH=x86_64 /home/ubuntu/appimagetool --appimage-extract-and-run AppDir fingwit.AppImage
 
 echo "AppImage created successfully: appimage/fingwit.AppImage"
 echo "Note: fingwit requires hardware access for fingerprint readers."
