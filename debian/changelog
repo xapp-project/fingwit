@@ -1,3 +1,36 @@
+fingwit (1.0.2) zara; urgency=medium
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+  * Remove trailing lines
+  * Add a PAM module
+
+  [ Michael Webster ]
+  * pam-auth-update: Add fingwit to pam-configs and switch to it
+
+  [ Clement Lefebvre ]
+  * Update README.md
+  * build: compile gsettings schemas
+  * debian: remove postinst
+  * appimage: compile gsettings schemas
+  * login: Disable by default
+  * pam_config: Increase timeout to 15
+
+  [ Michael Webster ]
+  * Use dbus to check for an existing user session, and make sure the existing session has a seat also (remote sessions don't).
+  * Update readme, mention gsettings.
+
+  [ xiao sheng wen ]
+  * d/control: Build-Depends add libpam0g-dev
+  * add zh_CN.po
+  * po/LINGUAS: add zh_CN
+
+  [ Clement Lefebvre ]
+  * Create LICENSE
+  * appimage: Fix build script
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 12 Jul 2025 14:21:57 +0200
+
 fingwit (1.0.1) zara; urgency=medium
 
   * Add .gitignore
