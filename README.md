@@ -14,7 +14,7 @@ Here's the list of supported fingerprint readers: https://fprint.freedesktop.org
 
 # AppImage
 
-An AppImage for fingwit is available in the releases section.
+An Appimage could be provided in the future.
 
 # PAM Configuration
 
@@ -144,6 +144,8 @@ chmod +x fingwit.AppImage
 ```
 
 **Note:** The AppImage requires the host system to have fprintd service running and fingerprint hardware drivers installed, as it provides the application but relies on the host for system integration.
+
+The AppImage currently has issues. Check https://github.com/xapp-project/fingwit/issues/16 for more info.
 
 # Translations
 
