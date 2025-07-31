@@ -1,0 +1,135 @@
+# Hindi translation for linuxmint
+# Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-06-05 16:14+0200\n"
+"PO-Revision-Date: 2025-07-20 16:33+0000\n"
+"Last-Translator: Manas salian <Unknown>\n"
+"Language-Team: Hindi <hi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:26+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
+
+#: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "फिंगरप्रिंट्स"
+
+#: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "फिंगरप्रिंट विन्यास उपकरण"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr "फिंगरप्रिंट;प्रमाणीकरण;सुरक्षा;बायोमेट्रिक;"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "दाहिनी तर्जनी"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "दाहिनी मध्यमा"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "दाहिनी अनामिका"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "दाहिनी कनिष्ठा"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "दाहिना अंगूठा"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "बाईं तर्जनी"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "बाईं मध्यमा अंगुली"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "बाईं अनामिका"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "बाईं कनिष्ठा"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "बायां अंगूठा"
+
+#: fingwit:97
+msgid "Disable fingerprint authentication"
+msgstr "फिंगरप्रिंट प्रमाणीकरण अक्षम करें"
+
+#: fingwit:101 fingwit:131
+msgid "About"
+msgstr "इसके बारे में"
+
+#: fingwit:106
+msgid "Quit"
+msgstr "बंद करें"
+
+#: fingwit:272
+msgid "Place your finger on the scanner..."
+msgstr "अपनी उंगली स्कैनर पर रखें..."
+
+#: fingwit:290
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "बहुत अच्छा! आपका फिंगरप्रिंट सफलतापूर्वक सहेजा गया है।"
+
+#: fingwit:296
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr "अच्छा स्कैन हुआ (%d अब तक)! इसे दोबारा करें..."
+
+#: fingwit:299
+msgid "Try again..."
+msgstr "पुनः प्रयास करें..."
+
+#: fingwit:302
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "माफ़ कीजिए, आपका फिंगरप्रिंट सहेजा नहीं जा सका।"
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "कोई फिंगरप्रिंट रीडर नहीं मिला"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "फिंगरप्रिंट प्रमाणीकरण अक्षम है"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "सक्रिय करें"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "कॉन्फ़िगर करने के लिए एक उंगली चुनें:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "सक्रिय फिंगरप्रिंट हरे रंग में हाइलाइट किए गए हैं।"
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "इस फिंगरप्रिंट को हटाएं"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "फिंगरप्रिंट जोड़ें"

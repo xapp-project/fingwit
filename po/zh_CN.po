@@ -1,21 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Chinese (Simplified) translation for linuxmint
+# Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-06-05 16:14+0200\n"
-"PO-Revision-Date: 2025-06-16 09:03+0800\n"
-"Last-Translator: xiao sheng wen <atzlinux@debian.org>\n"
-"Language-Team: \n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2025-06-09 07:01+0000\n"
+"Last-Translator: 张鹏 <scbeta@qq.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:26+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
 
 #: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
@@ -27,51 +27,51 @@ msgstr "指纹配置工具"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "指纹;认证;安全;生物识别;"
+msgstr "指纹;认证;安全;生物;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "右食指"
+msgstr "右手食指"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "右中指"
+msgstr "右手中指"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "右无名指"
+msgstr "右手无名指"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "右小指"
+msgstr "右手小指"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "右大拇指"
+msgstr "右手拇指"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "左食指"
+msgstr "左手食指"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "左中指"
+msgstr "左手中指"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "左无名指"
+msgstr "左手无名指"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "左小指"
+msgstr "左手小指"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "左大拇指"
+msgstr "左手拇指"
 
 #: fingwit:97
 msgid "Disable fingerprint authentication"
-msgstr "禁用指纹认证"
+msgstr "禁用指纹身份验证"
 
 #: fingwit:101 fingwit:131
 msgid "About"
@@ -83,32 +83,32 @@ msgstr "退出"
 
 #: fingwit:272
 msgid "Place your finger on the scanner..."
-msgstr "把手指放到指纹读取设备上……"
+msgstr "将手指放在扫描仪上..."
 
 #: fingwit:290
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "做得很好！你的指纹已经保存成功。"
+msgstr "干的好！您的指纹已成功保存。"
 
 #: fingwit:296
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "好的扫描（迄今为止第 %d 次）!再做一次……"
+msgstr "扫描不错（到目前为止 %d）！再做一次..."
 
 #: fingwit:299
 msgid "Try again..."
-msgstr "请重试……"
+msgstr "再试一次。。。"
 
 #: fingwit:302
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "对不起，你的指纹不能保存。"
+msgstr "抱歉，无法保存您的指纹。"
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "没有检测到指纹读取设备"
+msgstr "未检测到指纹读取器"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "禁用指纹认证"
+msgstr "已禁用指纹身份验证"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
@@ -116,11 +116,11 @@ msgstr "启用"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "选择一个指纹来配置："
+msgstr "选择一个手指进行配置："
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "已激活的指纹用绿色高亮。"
+msgstr "活动指纹以绿色突出显示。"
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
@@ -128,8 +128,8 @@ msgstr "取消"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "删除这个指纹"
+msgstr "删除此指纹"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "增加一个指纹"
+msgstr "添加指纹"

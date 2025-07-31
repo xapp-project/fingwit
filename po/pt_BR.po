@@ -1,4 +1,4 @@
-# French (Canada) translation for linuxmint
+# Brazilian Portuguese translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,129 +8,128 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-06-05 16:14+0200\n"
-"PO-Revision-Date: 2025-06-09 16:46+0000\n"
-"Last-Translator: AO <Unknown>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2025-06-10 13:15+0000\n"
+"Last-Translator: Alberlan Lopes <alberlan@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2025-07-31 09:26+0000\n"
 "X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
-"Language: fr\n"
 
 #: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr "Empreintes digitales"
+msgstr "Impressões digitais"
 
 #: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Outil de configuration d’empreintes digitales"
+msgstr "Ferramenta de configuração da impressão digital"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "empreinte digitale;authentification;sécurité;biométrique;"
+msgstr "impressão digital;autenticação;segurança;biometria;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Index droit"
+msgstr "Dedo indicador direito"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Majeur droit"
+msgstr "Dedo médio direito"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Annulaire droit"
+msgstr "Dedo anelar direito"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Auriculaire droit"
+msgstr "Dedo pequeno direito"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Pouce droit"
+msgstr "Polegar direito"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Index gauche"
+msgstr "Dedo indicador esquerdo"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Majeur gauche"
+msgstr "Dedo médio esquerdo"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Annulaire gauche"
+msgstr "Dedo anelar esquerdo"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Auriculaire gauche"
+msgstr "Dedo pequeno esquerdo"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Pouce gauche"
+msgstr "Polegar esquerdo"
 
 #: fingwit:97
 msgid "Disable fingerprint authentication"
-msgstr "Désactiver l’authentification par empreinte digitale"
+msgstr "Disativar autenticação por impressão digital"
 
 #: fingwit:101 fingwit:131
 msgid "About"
-msgstr "À propos"
+msgstr "Sobre"
 
 #: fingwit:106
 msgid "Quit"
-msgstr "Fermer"
+msgstr "Sair"
 
 #: fingwit:272
 msgid "Place your finger on the scanner..."
-msgstr "Placez votre doigt sur le lecteur…"
+msgstr "Coloque o seu dedo no scanner..."
 
 #: fingwit:290
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Votre empreinte digitale est enregistrée."
+msgstr "Parabéns! Sua impressão digital foi salva com sucesso."
 
 #: fingwit:296
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr "Boa varredura (%d até agora)! Repita..."
 
 #: fingwit:299
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "Tente novamente..."
 
 #: fingwit:302
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Votre empreinte n’a pas été enregistrée."
+msgstr "Desculpe, sua impressão digital não pôde ser salva."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreintes digitales n’a été détecté"
+msgstr "Nenhum leitor de impressão digital foi detectado"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr "Autenticação de impressão digital desativada"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr "Activer"
+msgstr "Habilitado"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Choisissez un doigt à configurer :"
+msgstr "Escolha um dedo para configurá-lo:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surbrillance verte"
+msgstr "As impressões digitais ativas são destacadas em verde."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Cancelar"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Supprimer cette empreinte"
+msgstr "Apagar esta impressão digital"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Ajouter une empreinte"
+msgstr "Adicionar uma impressão digital"

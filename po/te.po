@@ -1,0 +1,135 @@
+# Telugu translation for linuxmint
+# Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-06-05 16:14+0200\n"
+"PO-Revision-Date: 2025-06-14 05:49+0000\n"
+"Last-Translator: Aryan Karamtoth <Unknown>\n"
+"Language-Team: Telugu <te@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:26+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
+
+#: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "వేలిముద్రలు"
+
+#: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "వేలిముద్ర కాన్ఫిగరేషన్ సాధనం"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr "fingerprint;authentication;security;biometric;"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "కుడి చూపుడువేలు"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "కుడి మధ్య వ్రేలు"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "కుడి ఉంగరపు వ్రేలు"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "కుడి చిటికెన వ్రేలు"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "కుడి బ్రొటన వ్రేలు"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "ఎడమ చూపుడు వేలు"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "ఎడమ మధ్య వ్రేలు"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "ఎడమ ఉంగరపు వ్రేలు"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "ఎడమ చిటికెన వ్రేలు"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "ఎడమ బ్రొటన వ్రేలు"
+
+#: fingwit:97
+msgid "Disable fingerprint authentication"
+msgstr "వేలిముద్ర ప్రమాణీకరణను నిలిపివేయండి"
+
+#: fingwit:101 fingwit:131
+msgid "About"
+msgstr "గురించి"
+
+#: fingwit:106
+msgid "Quit"
+msgstr "వదిలి పెట్టు"
+
+#: fingwit:272
+msgid "Place your finger on the scanner..."
+msgstr "మీ వేలును స్కానర్‌పై ఉంచండి..."
+
+#: fingwit:290
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "బాగా చేసారు! మీ వేలిముద్ర విజయవంతంగా సేవ్ చేయబడింది."
+
+#: fingwit:296
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr "స్కాన్ బాగుంది (ఇప్పటివరకు %d)! మళ్ళీ చెయ్యి..."
+
+#: fingwit:299
+msgid "Try again..."
+msgstr "మళ్లీ ప్రయత్నించండి..."
+
+#: fingwit:302
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "క్షమించండి, మీ వేలిముద్రను సేవ్ చేయడం సాధ్యం కాలేదు."
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "వేలిముద్ర రీడర్ కనుగొనబడలేదు"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "వేలిముద్ర ప్రమాణీకరణ నిలిపివేయబడింది"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "చేతనించు"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "దీన్ని కాన్ఫిగర్ చేయడానికి వేలును ఎంచుకోండి:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "క్రియాశీల వేలిముద్రలు ఆకుపచ్చ రంగులో హైలైట్ చేయబడ్డాయి."
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "రద్దు చేయి"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "ఈ వేలిముద్రను తొలగించండి"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "వేలిముద్రను జోడించండి"
