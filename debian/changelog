@@ -1,3 +1,9 @@
+fingwit (1.0.3) zara; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 31 Jul 2025 11:43:02 +0200
+
 fingwit (1.0.2) zara; urgency=medium
 
   [ Clement Lefebvre ]
