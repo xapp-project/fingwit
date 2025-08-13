@@ -77,6 +77,7 @@ class Window():
         self.builder.set_translation_domain(APP)
         self.builder.add_from_file(gladefile)
         self.window = self.builder.get_object("main_window")
+        self.window.connect("delete-event", lambda w, e: self._quit())
         self.window.set_title(_("Fingerprints"))
         XApp.set_window_icon_name (self.window, "fingwit")
 
@@ -153,7 +154,7 @@ class Window():
         dlg.show()
 
     def on_menu_quit(self, widget):
-        self.application.quit()
+        self._quit()
 
     def enable_fprintd(self, widget=None):
         try:
@@ -194,6 +195,7 @@ class Window():
             self.builder.get_object("stack").set_visible_child_name("page_disabled")
         else:
             self.builder.get_object("stack").set_visible_child_name("page_devices")
+            self.claim_device()
             fingers = self.list_enrolled_fingers()
             self.flowbox = self.builder.get_object("flowbox")
             for child in self.flowbox.get_children():
@@ -241,11 +243,12 @@ class Window():
 
     def cancel(self, button):
         self.builder.get_object("stack").set_visible_child_name("page_devices")
+        self.stop_enrollment()
+        self.detect()
 
     def delete_finger(self, button):
         if self.finger:
             try:
-                self.claim_device()
                 self.device.call_sync(
                     'DeleteEnrolledFinger',
                     GLib.Variant('(s)', (self.finger,)),
@@ -254,7 +257,7 @@ class Window():
                     None
                 )
             finally:
-                self.release_device()
+                pass
         self.detect()
 
     def add_finger(self, button):
@@ -270,7 +273,6 @@ class Window():
         try:
             self.num_scans = 0
             self.builder.get_object("action_label").set_markup(_("Place your finger on the scanner..."))
-            self.claim_device()
             self.device.connect('g-signal', self.on_enrollment_signal)
             self.device.call_sync(
                 'EnrollStart',
@@ -281,7 +283,8 @@ class Window():
             )
         except Exception as e:
             print(f"Enrollment error: {e}")
-            self.enrollment_failed()
+            self.stop_enrollment()
+            GLib.timeout_add(2000, self.detect)
 
     def on_enrollment_signal(self, proxy, sender_name, signal_name, parameters):
         if signal_name == 'EnrollStatus':
@@ -300,24 +303,31 @@ class Window():
 
             elif status == "enroll-failed":
                 self.builder.get_object("action_label").set_markup(_("Sorry, your fingerprint could not be saved."))
-                self.enrollment_failed()
+                self.stop_enrollment()
+                GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
+
+            elif status == "enroll-duplicate":
+                self.builder.get_object("action_label").set_markup(_("This fingerprint is already saved, use a different finger."))
+                self.stop_enrollment()
+                GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
 
     def stop_enrollment(self):
         try:
+            try:
+                self.device.disconnect_by_func(self.on_enrollment_signal)
+            except:
+                pass
             self.device.call_sync('EnrollStop', None, Gio.DBusCallFlags.NONE, -1, None)
-        except:
-            pass
-        self.release_device()
-
-    def enrollment_failed(self):
-        self.stop_enrollment()
-        GLib.timeout_add(2000, self.detect)
+        except Exception as e:
+            if "net.reactivated.Fprint.Error.NoActionInProgress" not in e.message:
+                print("Could not cancel fingerprint enrollment:", e.message)
 
     def claim_device(self):
         try:
             self.device.call_sync('Claim', GLib.Variant('(s)', (os.getenv('USER'),)), Gio.DBusCallFlags.NONE, -1, None)
-        except:
-            pass
+        except GLib.Error as e:
+            if "net.reactivated.Fprint.Error.AlreadyInUse" not in e.message:
+                print("Could not claim device:", e.message)
 
     def release_device(self):
         try:
@@ -384,6 +394,11 @@ class Window():
             return enrolled_fingers
         except:
             return []
+
+    def _quit(self):
+        self.stop_enrollment()
+        self.release_device()
+        self.application.quit()
 
 if __name__ == "__main__":
     application = Application("org.x.fingwit", Gio.ApplicationFlags.FLAGS_NONE)
