@@ -1,4 +1,4 @@
-# Belarusian translation for linuxmint
+# Malay translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-06-05 16:14+0200\n"
-"PO-Revision-Date: 2025-06-20 10:03+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Belarusian <be@li.org>\n"
+"PO-Revision-Date: 2025-07-31 17:26+0000\n"
+"Last-Translator: Keviindran Ramachandran <Unknown>\n"
+"Language-Team: Malay <ms@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,117 +19,117 @@ msgstr ""
 
 #: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr ""
+msgstr "Cap jari"
 
 #: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr ""
+msgstr "Alat konfigurasi cap jari"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr ""
+msgstr "cap jari;pengesahan;keselamatan;biometrik;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr ""
+msgstr "Jari penunjuk kanan"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr ""
+msgstr "Jari tengah kanan"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr ""
+msgstr "Jari manis kanan"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr ""
+msgstr "Jari kelingking kanan"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr ""
+msgstr "Ibu jari kanan"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr ""
+msgstr "Jari penunjuk kiri"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr ""
+msgstr "Jari tengah kiri"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr ""
+msgstr "Jari manis kiri"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr ""
+msgstr "Jari kelingking kiri"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr ""
+msgstr "Ibu jari kiri"
 
 #: fingwit:97
 msgid "Disable fingerprint authentication"
-msgstr ""
+msgstr "Nyahdayakan pengesahan cap jari"
 
 #: fingwit:101 fingwit:131
 msgid "About"
-msgstr ""
+msgstr "Tentang"
 
 #: fingwit:106
 msgid "Quit"
-msgstr ""
+msgstr "Keluar"
 
 #: fingwit:272
 msgid "Place your finger on the scanner..."
-msgstr ""
+msgstr "Letakkan jari anda pada pengimbas..."
 
 #: fingwit:290
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr ""
+msgstr "Syabas! Cap jari anda telah berjaya disimpan."
 
 #: fingwit:296
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr ""
+msgstr "Imbasan baik (%d setakat ini)! Sila imbas sekali lagi..."
 
 #: fingwit:299
 msgid "Try again..."
-msgstr ""
+msgstr "Cuba lagi..."
 
 #: fingwit:302
 msgid "Sorry, your fingerprint could not be saved."
-msgstr ""
+msgstr "Maaf, cap jari anda tidak dapat disimpan."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr ""
+msgstr "Tiada pengimbas cap jari dikesan"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr ""
+msgstr "Pengesahan cap jari telah dinyahdayakan"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr ""
+msgstr "Aktifkan"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr ""
+msgstr "Pilih jari untuk mengkonfigurasikannya:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr ""
+msgstr "Cap jari aktif diserlahkan dengan warna hijau."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr ""
+msgstr "Padam cap jari ini"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr ""
+msgstr "Tambah cap jari"
