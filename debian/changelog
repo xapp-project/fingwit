@@ -1,3 +1,13 @@
+fingwit (1.0.4) zara; urgency=medium
+
+  [ Michael Webster ]
+  * Fix duplicate on_enrollment_signal connections, fprintd keepalive, handle enroll-duplicate status.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Aug 2025 17:38:57 +0200
+
 fingwit (1.0.3) zara; urgency=medium
 
   * l10n: Update translations
