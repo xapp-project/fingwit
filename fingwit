@@ -304,12 +304,12 @@ class Window():
             elif status == "enroll-failed":
                 self.builder.get_object("action_label").set_markup(_("Sorry, your fingerprint could not be saved."))
                 self.stop_enrollment()
-                GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
+                GLib.timeout_add(2000, self.detect)  # Show error for 2 seconds
 
             elif status == "enroll-duplicate":
                 self.builder.get_object("action_label").set_markup(_("This fingerprint is already saved, use a different finger."))
                 self.stop_enrollment()
-                GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
+                GLib.timeout_add(2000, self.detect)  # Show message for 2 seconds
 
     def stop_enrollment(self):
         try:
