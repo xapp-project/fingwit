@@ -1,3 +1,12 @@
+fingwit (1.0.5) gigi; urgency=medium
+
+  * l10n: Update POT
+  * build-deps: Add libaudit-dev
+  * Fix app not quitting when no device is found
+  * Remove test file
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 19 Sep 2025 08:33:28 +0100
+
 fingwit (1.0.4) zara; urgency=medium
 
   [ Michael Webster ]
