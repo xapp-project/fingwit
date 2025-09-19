@@ -312,6 +312,8 @@ class Window():
                 GLib.timeout_add(2000, self.detect)  # Show success for 2 seconds
 
     def stop_enrollment(self):
+        if self.device is None:
+            return
         try:
             try:
                 self.device.disconnect_by_func(self.on_enrollment_signal)
