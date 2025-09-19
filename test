@@ -1,5 +1,0 @@
-#!/bin/bash
-sudo rm -rf /usr/lib/fingwit
-sudo rm -rf /usr/share/fingwit
-sudo cp -R usr /
-fingwit
