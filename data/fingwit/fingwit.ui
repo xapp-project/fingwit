@@ -41,7 +41,7 @@
                         <property name="can-focus">False</property>
                         <property name="margin-bottom">20</property>
                         <property name="pixel-size">96</property>
-                        <property name="icon-name">auth-fingerprint-symbolic</property>
+                        <property name="icon-name">xapp-fingerprint-symbolic</property>
                         <property name="icon_size">6</property>
                         <style>
                           <class name="dim-label"/>
@@ -106,7 +106,7 @@
                         <property name="can-focus">False</property>
                         <property name="margin-bottom">20</property>
                         <property name="pixel-size">96</property>
-                        <property name="icon-name">auth-fingerprint-symbolic</property>
+                        <property name="icon-name">xapp-fingerprint-symbolic</property>
                         <property name="icon_size">6</property>
                         <style>
                           <class name="dim-label"/>
@@ -248,7 +248,7 @@
                         <property name="can-focus">False</property>
                         <property name="margin-bottom">20</property>
                         <property name="pixel-size">96</property>
-                        <property name="icon-name">auth-fingerprint-symbolic</property>
+                        <property name="icon-name">xapp-fingerprint-symbolic</property>
                         <property name="icon_size">6</property>
                         <style>
                           <class name="dim-label"/>
@@ -400,7 +400,7 @@
               <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="icon-name">open-menu-symbolic</property>
+                <property name="icon-name">xapp-open-menu-symbolic</property>
               </object>
             </child>
             <style>
