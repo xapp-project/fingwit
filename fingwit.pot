@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-26 17:41+0200\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,6 +104,14 @@ msgstr ""
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
+msgstr ""
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr ""
+
+#: fingwit:320
+msgid "An unknown error occured."
 msgstr ""
 
 #: data/fingwit/fingwit.ui.h:1

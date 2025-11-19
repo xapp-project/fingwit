@@ -312,12 +312,12 @@ class Window():
                 GLib.timeout_add(2000, self.detect)  # Show message for 2 seconds
 
             elif status == "enroll-data-full":
-                self.builder.get_object("action_label").set_markup(_("Sorry, this device cannot store any more fingerprints."))
+                self.builder.get_object("action_label").set_markup(_("This device cannot store any more fingerprints."))
                 self.stop_enrollment()
                 GLib.timeout_add(2000, self.detect)  # Show error for 2 seconds
 
             elif status == "enroll-unknown-error":
-                self.builder.get_object("action_label").set_markup(_("Sorry, an unknown error occured."))
+                self.builder.get_object("action_label").set_markup(_("An unknown error occured."))
                 self.stop_enrollment()
                 GLib.timeout_add(2000, self.detect)  # Show error for 2 seconds
 
