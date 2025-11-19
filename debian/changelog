@@ -1,3 +1,17 @@
+fingwit (1.0.6) zena; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Switch to XApp symbolic icons
+  * Switch to xapp-symbolic-icons (XSI)
+
+  [ Coby ]
+  * feat: Handle more types of enrollment errors (#35)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 19 Nov 2025 16:04:32 +0000
+
 fingwit (1.0.5) gigi; urgency=medium
 
   * l10n: Update POT
