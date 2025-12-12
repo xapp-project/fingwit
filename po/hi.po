@@ -7,21 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-06-05 16:14+0200\n"
-"PO-Revision-Date: 2025-07-20 16:33+0000\n"
-"Last-Translator: Manas salian <Unknown>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2025-09-18 19:22+0000\n"
+"Last-Translator: Kapil Gupta <Unknown>\n"
 "Language-Team: Hindi <hi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-08-26 15:26+0000\n"
-"X-Generator: Launchpad (build 919009172d854f2b8e4e8262db447f12f11d25eb)\n"
+"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
+"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
 
-#: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
 msgstr "फिंगरप्रिंट्स"
 
-#: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
 msgstr "फिंगरप्रिंट विन्यास उपकरण"
 
@@ -69,38 +69,51 @@ msgstr "बाईं कनिष्ठा"
 msgid "Left thumb"
 msgstr "बायां अंगूठा"
 
-#: fingwit:97
+#: fingwit:98
 msgid "Disable fingerprint authentication"
 msgstr "फिंगरप्रिंट प्रमाणीकरण अक्षम करें"
 
-#: fingwit:101 fingwit:131
+#: fingwit:102 fingwit:132
 msgid "About"
 msgstr "इसके बारे में"
 
-#: fingwit:106
+#: fingwit:107
 msgid "Quit"
 msgstr "बंद करें"
 
-#: fingwit:272
+#: fingwit:275
 msgid "Place your finger on the scanner..."
 msgstr "अपनी उंगली स्कैनर पर रखें..."
 
-#: fingwit:290
+#: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
 msgstr "बहुत अच्छा! आपका फिंगरप्रिंट सफलतापूर्वक सहेजा गया है।"
 
-#: fingwit:296
+#: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
 msgstr "अच्छा स्कैन हुआ (%d अब तक)! इसे दोबारा करें..."
 
-#: fingwit:299
+#: fingwit:302
 msgid "Try again..."
 msgstr "पुनः प्रयास करें..."
 
-#: fingwit:302
+#: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
 msgstr "माफ़ कीजिए, आपका फिंगरप्रिंट सहेजा नहीं जा सका।"
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr ""
+"यह फिंगरप्रिंट पहले से ही सेव है, कृपया कोई अन्य उंगली इस्तेमाल करें।"
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr ""
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr ""
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"

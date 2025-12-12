@@ -1,4 +1,4 @@
-# French (Canada) translation for linuxmint
+# Esperanto translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,142 +8,140 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-21 18:53+0000\n"
-"Last-Translator: AO <Unknown>\n"
-"Language-Team: French (Canada) <fr_CA@li.org>\n"
+"PO-Revision-Date: 2025-11-19 20:56+0000\n"
+"Last-Translator: Piet Coppens <Unknown>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
 "X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
-"Language: fr_CA\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr "Empreintes digitales"
+msgstr "Fingropremaĵoj"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Outil de configuration d’empreintes digitales"
+msgstr "Fingropremaĵa agordilo"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "empreinte digitale;authentification;sécurité;biométrique;"
+msgstr "fingropremaĵo;aŭtentigo;sekurigo;biometria;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Index droit"
+msgstr "Dekstra montrofingro"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Majeur droit"
+msgstr "Dekstra mezfingro"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Annulaire droit"
+msgstr "Dekstra ringofingro"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Auriculaire droit"
+msgstr "Dekstra etfingro"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Pouce droit"
+msgstr "Dekstra dikfingro"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Index gauche"
+msgstr "Maldekstra montrofingro"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Majeur gauche"
+msgstr "Maldekstra mezfingro"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Annulaire gauche"
+msgstr "Maldekstra ringofingro"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Auriculaire gauche"
+msgstr "Maldekstra etfingro"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Pouce gauche"
+msgstr "Maldekstra dikfingro"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
-msgstr "Désactiver l’authentification par empreinte digitale"
+msgstr "Malŝalti aŭtentigon per fingropremaĵo"
 
 #: fingwit:102 fingwit:132
 msgid "About"
-msgstr "À propos"
+msgstr "Pri"
 
 #: fingwit:107
 msgid "Quit"
-msgstr "Fermer"
+msgstr "Forlasi"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr "Placez votre doigt sur le lecteur…"
+msgstr "Metu vian fingron sur la skanilon..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Votre empreinte digitale est enregistrée."
+msgstr "Bone farite! Via fingropremaĵo estis konservita sukcese."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr "Bona skanaĵo (%d ĝis nun)! Faru ĝin denove..."
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "Provu denove..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Votre empreinte n’a pas été enregistrée."
+msgstr "Bedaŭrinde ne eblas konservi vian fingropremaĵon."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
-"Cette empreinte digitale est déjà enregistrée, utilisez un autre doigt."
+msgstr "Ĉi tiu fingropremaĵo estas jam konservita, uzu malsaman fingron."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr "Cet appareil ne peut plus enregistrer d’empreintes digitales."
+msgstr "Ĉi tiu aparato ne povas konservi ajnan plian fingropremaĵon."
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr "Une erreur inconnue est survenue."
+msgstr "Okazis nekonata eraro."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreinte digitale n’a été détecté"
+msgstr "Neniu fingropremaĵ-legilo detektita"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr "Aŭtentigo per fingropremaĵo malŝaltita"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr "Activer"
+msgstr "Ŝalti"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Choisissez un doigt à configurer :"
+msgstr "Elektu agordotan fingron:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surlignées en vert"
+msgstr "Aktivaj fingropremaĵoj estas markitaj verde."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Nuligi"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Supprimer cette empreinte"
+msgstr "Forigi ĉi tiun fingropremaĵon"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Ajouter une empreinte"
+msgstr "Aldoni fingropremaĵon"

@@ -1,4 +1,4 @@
-# French (Canada) translation for linuxmint
+# Slovenian translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,142 +8,142 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-21 18:53+0000\n"
-"Last-Translator: AO <Unknown>\n"
-"Language-Team: French (Canada) <fr_CA@li.org>\n"
+"PO-Revision-Date: 2025-11-26 20:42+0000\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
 "X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
-"Language: fr_CA\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr "Empreintes digitales"
+msgstr "Prstni odtisi"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Outil de configuration d’empreintes digitales"
+msgstr "Orodje za prilagoditev prstnih odtisov"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "empreinte digitale;authentification;sécurité;biométrique;"
+msgstr ""
+"prstni odtis;prstni odtisi;ovejranje;pristnost;overjanje "
+"pristnosti;varnost;biometrično;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Index droit"
+msgstr "Desni kazalec"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Majeur droit"
+msgstr "Desni sredinec"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Annulaire droit"
+msgstr "Desni prstanec"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Auriculaire droit"
+msgstr "Desni mezinec"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Pouce droit"
+msgstr "Desni palec"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Index gauche"
+msgstr "Levi kazalec"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Majeur gauche"
+msgstr "Levi sredinec"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Annulaire gauche"
+msgstr "Levi prstanec"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Auriculaire gauche"
+msgstr "Levi mezinec"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Pouce gauche"
+msgstr "Levi palec"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
-msgstr "Désactiver l’authentification par empreinte digitale"
+msgstr "Onemogoči overjanje pristnosti s prstnim odtisom"
 
 #: fingwit:102 fingwit:132
 msgid "About"
-msgstr "À propos"
+msgstr "O programu"
 
 #: fingwit:107
 msgid "Quit"
-msgstr "Fermer"
+msgstr "Izhod"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr "Placez votre doigt sur le lecteur…"
+msgstr "Postavite svoj prst na bralnik ..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Votre empreinte digitale est enregistrée."
+msgstr "Odlično! Vaš prstni odtis je uspešno shranjen."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr "Dobro brannje (doslej %d)! Ponovite ..."
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "Poskusite znova ..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Votre empreinte n’a pas été enregistrée."
+msgstr "Žal vašega prstnega odtisa ni možno shraniti."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
-"Cette empreinte digitale est déjà enregistrée, utilisez un autre doigt."
+msgstr "Prstni odtis je že shranjen, uporabite drug prst."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr "Cet appareil ne peut plus enregistrer d’empreintes digitales."
+msgstr "Ta naprava ne more hraniti nobenega prstega odtisa več"
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr "Une erreur inconnue est survenue."
+msgstr "Prišlo je do neznane napake."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreinte digitale n’a été détecté"
+msgstr "Bralnik prstnih odtisov ni zaznan"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr "Overjanje pristnosti s prstnim odtisom je onemogočeno"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr "Activer"
+msgstr "Omogoči"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Choisissez un doigt à configurer :"
+msgstr "Izberite prst, za katerega ga želite nastaviti:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surlignées en vert"
+msgstr "Aktivni prstni odtisi so poudarjeni z zeleno barvo."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Prekliči"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Supprimer cette empreinte"
+msgstr "Izbriši ta prstni odtis"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Ajouter une empreinte"
+msgstr "Dodaj prstni odtis"

@@ -1,4 +1,4 @@
-# French (Canada) translation for linuxmint
+# Icelandic translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,142 +8,140 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-21 18:53+0000\n"
-"Last-Translator: AO <Unknown>\n"
-"Language-Team: French (Canada) <fr_CA@li.org>\n"
+"PO-Revision-Date: 2025-11-24 20:10+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <is@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
 "X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
-"Language: fr_CA\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr "Empreintes digitales"
+msgstr "Fingraför"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Outil de configuration d’empreintes digitales"
+msgstr "Uppsetning fingrafaralesturs"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "empreinte digitale;authentification;sécurité;biométrique;"
+msgstr "fingrafar;auðkenning;öryggi;lífkennsl;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Index droit"
+msgstr "Hægri vísifingur"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Majeur droit"
+msgstr "Hægri langatöng"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Annulaire droit"
+msgstr "Hægri baugfingur"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Auriculaire droit"
+msgstr "Hægri litlifingur"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Pouce droit"
+msgstr "Hægri þumall"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Index gauche"
+msgstr "Vinstri vísifingur"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Majeur gauche"
+msgstr "Vinstri langatöng"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Annulaire gauche"
+msgstr "Vinstri baugfingur"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Auriculaire gauche"
+msgstr "Vinstri litlifingur"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Pouce gauche"
+msgstr "Vinstri þumall"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
-msgstr "Désactiver l’authentification par empreinte digitale"
+msgstr "Gera auðkenningu með fingrafari óvirka"
 
 #: fingwit:102 fingwit:132
 msgid "About"
-msgstr "À propos"
+msgstr "Um hugbúnaðinn"
 
 #: fingwit:107
 msgid "Quit"
-msgstr "Fermer"
+msgstr "Hætta"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr "Placez votre doigt sur le lecteur…"
+msgstr "Settu fingurinn þinn á skannann..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Votre empreinte digitale est enregistrée."
+msgstr "Vel gert! Það tókst að vista fingrafarið þitt."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr "Góð skönnun (%d til þessa)! Gerðu það aftur..."
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "Prófaðu aftur..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Votre empreinte n’a pas été enregistrée."
+msgstr "Því miður tókst ekki að vista fingrafarið þitt."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
-"Cette empreinte digitale est déjà enregistrée, utilisez un autre doigt."
+msgstr "Þetta fingrafar er þegar vistað, prófaðu annan fingur."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr "Cet appareil ne peut plus enregistrer d’empreintes digitales."
+msgstr "Þetta tæki getur ekki geymt fleiri fingraför."
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr "Une erreur inconnue est survenue."
+msgstr "Óþekkt villa kom upp."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreinte digitale n’a été détecté"
+msgstr "Enginn fingrafaralesari fannst"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr "Auðkenning með fingrafari er óvirk"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr "Activer"
+msgstr "Virkja"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Choisissez un doigt à configurer :"
+msgstr "Veldu fingur til að stilla:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surlignées en vert"
+msgstr "Virk fingraför eru áherslulituð með grænum lit."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Hætta við"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Supprimer cette empreinte"
+msgstr "Eyða þessu fingrafari"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Ajouter une empreinte"
+msgstr "Bæta við fingrafari"

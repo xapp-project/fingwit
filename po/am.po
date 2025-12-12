@@ -1,4 +1,4 @@
-# French (Canada) translation for linuxmint
+# Amharic translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,142 +8,140 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-21 18:53+0000\n"
-"Last-Translator: AO <Unknown>\n"
-"Language-Team: French (Canada) <fr_CA@li.org>\n"
+"PO-Revision-Date: 2025-11-21 14:07+0000\n"
+"Last-Translator: Eyob Abebe Melese <Unknown>\n"
+"Language-Team: Amharic <am@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
 "X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
-"Language: fr_CA\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr "Empreintes digitales"
+msgstr "የጣት አሻራዎች"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Outil de configuration d’empreintes digitales"
+msgstr ""
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "empreinte digitale;authentification;sécurité;biométrique;"
+msgstr "የጣት አሻራ፤ማረጋገጫ፤ደህንነት፤ባዮሜትሪክ፤"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Index droit"
+msgstr "የቀኝ አመልካች ጣት"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Majeur droit"
+msgstr "የቀኝ መካከለኛ ጣት"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Annulaire droit"
+msgstr "የቀኝ ቀለበት ጣት"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Auriculaire droit"
+msgstr "የቀኝ ትንሽ ጣት"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Pouce droit"
+msgstr "የቀኝ አውራ ጣት"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Index gauche"
+msgstr "የግራ አመልካች ጣት"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Majeur gauche"
+msgstr "የግራ መካከለኛ ጣት"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Annulaire gauche"
+msgstr "የግራ የቀለበት ጣት"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Auriculaire gauche"
+msgstr "የግራ ትንሽ ጣት"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Pouce gauche"
+msgstr "የግራ አውራ ጣት"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
-msgstr "Désactiver l’authentification par empreinte digitale"
+msgstr ""
 
 #: fingwit:102 fingwit:132
 msgid "About"
-msgstr "À propos"
+msgstr "ስለ"
 
 #: fingwit:107
 msgid "Quit"
-msgstr "Fermer"
+msgstr "ውጣ"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr "Placez votre doigt sur le lecteur…"
+msgstr "ጣትዎን በቃኚው ላይ ያድርጉት..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Votre empreinte digitale est enregistrée."
+msgstr "የጣት አሻራዎ በተሳካ ሁኔታ ተቀምጧል።"
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr ""
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "እንደገና ይሞክሩ..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Votre empreinte n’a pas été enregistrée."
+msgstr "ይቅርታ፣ የጣት አሻራዎ ሊቀመጥ አልቻለም።"
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
-"Cette empreinte digitale est déjà enregistrée, utilisez un autre doigt."
+msgstr "ይህ የጣት አሻራ አስቀድሞ ተቀምጧል፣ የተለየ ጣት ይጠቀሙ።"
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr "Cet appareil ne peut plus enregistrer d’empreintes digitales."
+msgstr "ይህ መሳሪያ ተጨማሪ የጣት አሻራዎችን ማከማቸት አይችልም።"
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr "Une erreur inconnue est survenue."
+msgstr ""
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreinte digitale n’a été détecté"
+msgstr "ምንም የጣት አሻራ አንባቢ አልተገኘም።"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr ""
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr "Activer"
+msgstr "አብራ"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Choisissez un doigt à configurer :"
+msgstr ""
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surlignées en vert"
+msgstr ""
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "ሰርዝ"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Supprimer cette empreinte"
+msgstr "ይህን የጣት አሻራ ሰርዝ"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Ajouter une empreinte"
+msgstr "የጣት አሻራ ይጨምሩ"

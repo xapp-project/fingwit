@@ -1,4 +1,4 @@
-# French (Canada) translation for linuxmint
+# Latvian translation for linuxmint
 # Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
 # This file is distributed under the same license as the linuxmint package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,142 +8,140 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-21 18:53+0000\n"
-"Last-Translator: AO <Unknown>\n"
-"Language-Team: French (Canada) <fr_CA@li.org>\n"
+"PO-Revision-Date: 2025-11-20 16:01+0000\n"
+"Last-Translator: Klavs Petersons <Unknown>\n"
+"Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
 "X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
-"Language: fr_CA\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr "Empreintes digitales"
+msgstr "Pirkstu nospiedumi"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Outil de configuration d’empreintes digitales"
+msgstr "Pirkstu nospiedumu konfigurēšanas rīks"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr "empreinte digitale;authentification;sécurité;biométrique;"
+msgstr "pirkstu nospiedumi; autentifikācija; drošība; biometriskie dati;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Index droit"
+msgstr "Labais rādītājpirksts"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Majeur droit"
+msgstr "Labais vidējais pirksts"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Annulaire droit"
+msgstr "Labais zeltnesis"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Auriculaire droit"
+msgstr "Labais mazais pirkstiņš"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Pouce droit"
+msgstr "Labais īkšķis"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Index gauche"
+msgstr "Kreisais rādītājpirksts"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Majeur gauche"
+msgstr "Kreisais vidējais pirksts"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Annulaire gauche"
+msgstr "Kreisais zeltnesis"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Auriculaire gauche"
+msgstr "Kreisais mazais pirkstiņš"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Pouce gauche"
+msgstr "Kreisais īkšķis"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
-msgstr "Désactiver l’authentification par empreinte digitale"
+msgstr "Atspējot pirkstu nospiedumu autentifikāciju"
 
 #: fingwit:102 fingwit:132
 msgid "About"
-msgstr "À propos"
+msgstr "Par"
 
 #: fingwit:107
 msgid "Quit"
-msgstr "Fermer"
+msgstr "Iziet"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr "Placez votre doigt sur le lecteur…"
+msgstr "Novietojiet pirkstu uz skenera..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Votre empreinte digitale est enregistrée."
+msgstr "Lieliski! Jūsu pirkstu nospiedums tika veiksmīgi saglabāts."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr "Labs skenējums (%d līdz šim)! Veiciet atkārtotu skenēšanu..."
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "Mēģiniet vēlreiz..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Votre empreinte n’a pas été enregistrée."
+msgstr "Atvainojiet, jūsu pirkstu nospiedumu neizdevās saglabāt."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
-"Cette empreinte digitale est déjà enregistrée, utilisez un autre doigt."
+msgstr "Šis pirkstu nospiedums jau ir saglabāts, izmantojiet citu pirkstu."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr "Cet appareil ne peut plus enregistrer d’empreintes digitales."
+msgstr "Šī ierīce nevar uzglabāt vairāk pirkstu nospiedumu."
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr "Une erreur inconnue est survenue."
+msgstr "Radās nezināma kļūda."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreinte digitale n’a été détecté"
+msgstr "Pirkstu nospiedumu lasītājs nav atrasts"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr "Pirkstu nospiedumu autentifikācija atspējota"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr "Activer"
+msgstr "Iespējot"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Choisissez un doigt à configurer :"
+msgstr "Izvēlieties pirkstu, ko konfigurēt:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surlignées en vert"
+msgstr "Aktīvie pirkstu nospiedumi ir iezīmēti zaļā krāsā."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Atcelt"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Supprimer cette empreinte"
+msgstr "Dzēst šo pirkstu nospiedumu"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Ajouter une empreinte"
+msgstr "Pievienot pirkstu nospiedumu"

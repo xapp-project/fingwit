@@ -7,21 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-06-05 16:14+0200\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
 "PO-Revision-Date: 2025-06-14 05:49+0000\n"
 "Last-Translator: Aryan Karamtoth <Unknown>\n"
 "Language-Team: Telugu <te@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-08-26 15:26+0000\n"
-"X-Generator: Launchpad (build 919009172d854f2b8e4e8262db447f12f11d25eb)\n"
+"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
+"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
 
-#: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
 msgstr "వేలిముద్రలు"
 
-#: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
 msgstr "వేలిముద్ర కాన్ఫిగరేషన్ సాధనం"
 
@@ -69,38 +69,50 @@ msgstr "ఎడమ చిటికెన వ్రేలు"
 msgid "Left thumb"
 msgstr "ఎడమ బ్రొటన వ్రేలు"
 
-#: fingwit:97
+#: fingwit:98
 msgid "Disable fingerprint authentication"
 msgstr "వేలిముద్ర ప్రమాణీకరణను నిలిపివేయండి"
 
-#: fingwit:101 fingwit:131
+#: fingwit:102 fingwit:132
 msgid "About"
 msgstr "గురించి"
 
-#: fingwit:106
+#: fingwit:107
 msgid "Quit"
 msgstr "వదిలి పెట్టు"
 
-#: fingwit:272
+#: fingwit:275
 msgid "Place your finger on the scanner..."
 msgstr "మీ వేలును స్కానర్‌పై ఉంచండి..."
 
-#: fingwit:290
+#: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
 msgstr "బాగా చేసారు! మీ వేలిముద్ర విజయవంతంగా సేవ్ చేయబడింది."
 
-#: fingwit:296
+#: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
 msgstr "స్కాన్ బాగుంది (ఇప్పటివరకు %d)! మళ్ళీ చెయ్యి..."
 
-#: fingwit:299
+#: fingwit:302
 msgid "Try again..."
 msgstr "మళ్లీ ప్రయత్నించండి..."
 
-#: fingwit:302
+#: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
 msgstr "క్షమించండి, మీ వేలిముద్రను సేవ్ చేయడం సాధ్యం కాలేదు."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr ""
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr ""
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr ""
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"

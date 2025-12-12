@@ -7,21 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-06-05 16:14+0200\n"
-"PO-Revision-Date: 2025-06-05 22:32+0000\n"
-"Last-Translator: Isidro Pisa <isidro@pisa.red>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2025-11-19 16:29+0000\n"
+"Last-Translator: Marcos Sánchez <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-08-26 15:26+0000\n"
-"X-Generator: Launchpad (build 919009172d854f2b8e4e8262db447f12f11d25eb)\n"
+"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
+"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
 
-#: data/fingwit.desktop.in:3 fingwit:80 data/fingwit/fingwit.ui.h:9
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
 msgstr "Huellas dactilares"
 
-#: data/fingwit.desktop.in:4 fingwit:133 data/fingwit/fingwit.ui.h:10
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
 msgstr "Herramienta de configuración de huella dactilar"
 
@@ -69,38 +69,50 @@ msgstr "Dedo meñique izquierdo"
 msgid "Left thumb"
 msgstr "Pulgar izquierdo"
 
-#: fingwit:97
+#: fingwit:98
 msgid "Disable fingerprint authentication"
 msgstr "Deshabilitar la autenticación por huellas dactilares"
 
-#: fingwit:101 fingwit:131
+#: fingwit:102 fingwit:132
 msgid "About"
 msgstr "Acerca de"
 
-#: fingwit:106
+#: fingwit:107
 msgid "Quit"
 msgstr "Salir"
 
-#: fingwit:272
+#: fingwit:275
 msgid "Place your finger on the scanner..."
 msgstr "Coloque el dedo sobre el escáner..."
 
-#: fingwit:290
+#: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
 msgstr "La huella dactilar se ha guardado correctamente."
 
-#: fingwit:296
+#: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
 msgstr "¡Buen escaneo (%d hasta ahora)! Hágalo de nuevo..."
 
-#: fingwit:299
+#: fingwit:302
 msgid "Try again..."
 msgstr "Inténtelo de nuevo..."
 
-#: fingwit:302
+#: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
 msgstr "No se ha podido guardar la huella dactilar."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "Esta huella dactilar ya está guardada; use otro dedo."
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "Este dispositivo no puede almacenar más huellas dactilares."
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "Se ha producido un error desconocido."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"

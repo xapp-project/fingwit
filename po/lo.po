@@ -1,0 +1,147 @@
+# Lao translation for linuxmint
+# Copyright (c) 2025 Rosetta Contributors and Canonical Ltd 2025
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2025-11-19 17:38+0000\n"
+"Last-Translator: boneni <Unknown>\n"
+"Language-Team: Lao <lo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
+"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
+
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "ລາຍນິ້ວມື"
+
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "ເຄື່ອງມືຕັ້ງຄ່າລາຍນິ້ວມື"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr "ລາຍນິ້ວມື;ການຢືນຢັນຕົວຕົນ;ຄວາມປອດໄພ;ຊີວະມິຕິ;"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "ນິ້ວຊີ້ຂວາ"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "ນິ້ວກາງຂວາ"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "ນິ້ວນາງຂວາ"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "ນິ້ວກ້ອຍຂວາ"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "ນິ້ວໂປ້ຂວາ"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "ນິ້ວຊີ້ຊ້າຍ"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "ນິ້ວກາງຊ້າຍ"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "ນິ້ວນາງຊ້າຍ"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "ນິ້ວກ້ອຍຊ້າຍ"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "ນິ້ວໂປ້ຊ້າຍ"
+
+#: fingwit:98
+msgid "Disable fingerprint authentication"
+msgstr "ປິດການນຳໃຊ້ການຢືນຢັນຕົວຕົນດ້ວຍລາຍນິ້ວມື"
+
+#: fingwit:102 fingwit:132
+msgid "About"
+msgstr "ກ່ຽວກັບ"
+
+#: fingwit:107
+msgid "Quit"
+msgstr "ອອກ"
+
+#: fingwit:275
+msgid "Place your finger on the scanner..."
+msgstr "ວາງນິ້ວມືຂອງທ່ານໃສ່ເຄື່ອງສະແກນ..."
+
+#: fingwit:293
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "ດີຫຼາຍ! ບັນທຶກລາຍນິ້ວມືຂອງທ່ານສຳເລັດແລ້ວ."
+
+#: fingwit:299
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr "ສະແກນໄດ້ດີ (%d ຄັ້ງ)! ເຮັດອີກຄັ້ງ..."
+
+#: fingwit:302
+msgid "Try again..."
+msgstr "ລອງໃໝ່ອີກຄັ້ງ..."
+
+#: fingwit:305
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "ຂໍອະໄພ, ບໍ່ສາມາດບັນທຶກລາຍນິ້ວມືຂອງທ່ານໄດ້."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "ລາຍນິ້ວມືນີ້ໄດ້ຖືກບັນທຶກໄວ້ແລ້ວ, ກະລຸນາໃຊ້ນິ້ວອື່ນ."
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "ອຸປະກອນນີ້ບໍ່ສາມາດເກັບລາຍນິ້ວມືເພີ່ມໄດ້."
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "ເກີດຂໍ້ຜິດພາດທີ່ບໍ່ຮູ້ສາເຫດ."
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "ບໍ່ພົບເຄື່ອງອ່ານລາຍນິ້ວມື"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "ການຢືນຢັນຕົວຕົນດ້ວຍລາຍນິ້ວມືຖືກປິດໄວ້"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "ເປີດໃຊ້ງານ"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "ເລືອກນິ້ວມືເພື່ອຕັ້ງຄ່າ:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "ລາຍນິ້ວມືທີ່ໃຊ້ງານຢູ່ຈະຖືກໝາຍເປັນສີຂຽວ."
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "ລຶບລາຍນິ້ວມືນີ້"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "ເພີ່ມລາຍນິ້ວມື"
