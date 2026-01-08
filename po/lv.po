@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-20 16:01+0000\n"
+"PO-Revision-Date: 2025-12-25 12:45+0000\n"
 "Last-Translator: Klavs Petersons <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
-"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
+"X-Launchpad-Export-Date: 2026-01-08 15:45+0000\n"
+"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"Language: lv\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
@@ -83,28 +84,28 @@ msgstr "Iziet"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr "Novietojiet pirkstu uz skenera..."
+msgstr "Novieto pirkstu uz skenera..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Lieliski! Jūsu pirkstu nospiedums tika veiksmīgi saglabāts."
+msgstr "Lieliski! Tavs pirksta nospiedums tika veiksmīgi saglabāts."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Labs skenējums (%d līdz šim)! Veiciet atkārtotu skenēšanu..."
+msgstr "Labs skenējums (%d līdz šim)! Veic atkārtotu skenēšanu..."
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Mēģiniet vēlreiz..."
+msgstr "Mēģini vēlreiz..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Atvainojiet, jūsu pirkstu nospiedumu neizdevās saglabāt."
+msgstr "Atvaino, tavu pirkstu nospiedumu neizdevās saglabāt."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr "Šis pirkstu nospiedums jau ir saglabāts, izmantojiet citu pirkstu."
+msgstr "Šis pirkstu nospiedums jau ir saglabāts, izmanto citu pirkstu."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
@@ -116,7 +117,7 @@ msgstr "Radās nezināma kļūda."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Pirkstu nospiedumu lasītājs nav atrasts"
+msgstr "Nav konstatēts pirkstu nospiedumu lasītājs"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
@@ -128,11 +129,11 @@ msgstr "Iespējot"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr "Izvēlieties pirkstu, ko konfigurēt:"
+msgstr "Izvēlies pirkstu, lai to konfigurētu:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Aktīvie pirkstu nospiedumi ir iezīmēti zaļā krāsā."
+msgstr "Aktīvie pirkstu nospiedumi ir izcelti zaļā krāsā."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-09-04 11:04+0000\n"
+"PO-Revision-Date: 2026-01-04 10:24+0000\n"
 "Last-Translator: Anthony Guechoum <a.guechoum@proton.me>\n"
 "Language-Team: Breton <br@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2025-12-12 13:33+0000\n"
-"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
+"X-Launchpad-Export-Date: 2026-01-08 15:45+0000\n"
+"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr ""
+msgstr "Enrollet eo bet ho louc'h-biz gant berzh."
 
 #: fingwit:299
 #, python-format
@@ -96,15 +96,15 @@ msgstr ""
 
 #: fingwit:302
 msgid "Try again..."
-msgstr ""
+msgstr "Klask adarre..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr ""
+msgstr "N'haller ket enrollañ ar louc'h-biz-mañ."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
+msgstr "Enrollet eo bet al louc'h-biz-mañ dija, implijit ur biz all."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
@@ -112,7 +112,7 @@ msgstr ""
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr ""
+msgstr "Degouezhet ez eus bet ur fazi dianav."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
