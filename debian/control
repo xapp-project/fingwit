@@ -6,6 +6,7 @@ Build-Depends: debhelper-compat (= 13),
                meson,
                libaudit-dev,
                libpam0g-dev,
+               pkg-config,
 Standards-Version: 3.9.6
 Rules-Requires-Root: no
 
