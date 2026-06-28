@@ -1,3 +1,10 @@
+fingwit (1.0.9) alfa; urgency=medium
+
+  [ Michael Webster ]
+  * pam_fingwit: redirect forked child's stdio to /dev/null to avoid corrupting the polkit helper protocol.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 28 Jun 2026 16:18:46 +0200
+
 fingwit (1.0.8) zena; urgency=medium
 
   * l10n: Update translations
