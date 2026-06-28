@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <stdio.h>
+#include <fcntl.h>
 
 #define PYTHON_SCRIPT PYTHON_SCRIPT_DIR "/pam_fingwit.py"
 
@@ -49,6 +50,20 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, cons
     pid = fork();
     if (pid == 0) {
         // Child process
+
+        // Detach the inherited descriptors from PAM. In the polkit
+        // agent helper these are the protocol socket back to the
+        // authentication agent; any stray output from python (or glib)
+        // would corrupt that stream.
+        int devnull = open("/dev/null", O_RDWR);
+        if (devnull >= 0) {
+            dup2(devnull, STDIN_FILENO);
+            dup2(devnull, STDOUT_FILENO);
+            dup2(devnull, STDERR_FILENO);
+            if (devnull > STDERR_FILENO)
+                close(devnull);
+        }
+
         setenv("PAM_USER", user, 1);
         setenv("PAM_SERVICE", service, 1);
         
