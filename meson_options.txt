@@ -1,0 +1,4 @@
+option('python_executable',
+       type : 'string',
+       value : '/usr/bin/python3',
+       description : 'Absolute path of the interpreter used to run pam_fingwit.py')

@@ -4,4 +4,4 @@ debian/libpam-fingwit
 debian/*debhelper*
 debian/*substvar*
 debian/files
-usr/share/locale/*
+usr/share/locale/*builddir-tests

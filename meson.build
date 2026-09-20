@@ -23,6 +23,15 @@ custom_target('fingwit_versioned',
 # Build PAM module
 pam_dep = dependency('pam', required: true)
 
+# The PAM module runs the helper with euid 0, so the interpreter must be named
+# by an absolute path: resolving it through PATH lets any local user run code
+# as root (issue #54) and picks up pyenv/conda interpreters that lack the
+# python3-gi bindings (issue #51).
+python_executable = get_option('python_executable')
+if not python_executable.startswith('/')
+    error('python_executable must be an absolute path, got: ' + python_executable)
+endif
+
 # PAM configs directory
 pam_config_dir = join_paths(get_option('prefix'), datadir, 'pam-configs')
 # Install pam config
@@ -43,7 +52,8 @@ pam_fingwit_so = shared_library('pam_fingwit',
     name_prefix: '',
     install: true,
     install_dir: pam_module_dir,
-    c_args: ['-DPYTHON_SCRIPT_DIR="' + pam_python_dir + '"']
+    c_args: ['-DPYTHON_SCRIPT_DIR="' + pam_python_dir + '"',
+             '-DPYTHON_EXECUTABLE="' + python_executable + '"']
 )
 
 # Install Python script
@@ -59,5 +69,6 @@ subdir('po')
 summary({
   'pam_module_dir': pam_module_dir,
   'pam_python_dir': pam_python_dir,
+  'python_executable': python_executable,
   'compiler': meson.get_compiler('c').get_id(),
 }, section: 'Configuration')
