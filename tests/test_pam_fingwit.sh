@@ -178,6 +178,44 @@ EOF
             ko "PAM_SERVICE is set from the PAM item" "$(grep '^PAM_SERVICE=' "$dump_out")"
         fi
     fi
+    echo "== hardening: child and wait handling =="
+
+    # PAM is full of signals (SIGCHLD, SIGALRM, SIGWINCH). If waitpid() is
+    # interrupted the module must wait again, not read an uninitialised status
+    # and decide authentication from whatever was on the stack.
+    marker="$FINGWIT_ENVDUMP_PATH.finished"
+    cat > "$FINGWIT_ENVDUMP_PATH" <<EOF
+#!/bin/sh
+sleep 1
+: > "$marker"
+exit $PAM_IGNORE
+EOF
+    chmod +x "$FINGWIT_ENVDUMP_PATH"
+
+    rm -f "$marker"
+    got=$(FINGWIT_DRIVER_ALARM_MS=200 "$DRIVER" "$FINGWIT_ENVDUMP_SO" sudo "$USER" debug 2>/dev/null)
+    if [ -e "$marker" ]; then
+        ok "a signal during the wait does not cut the helper short"
+    else
+        ko "a signal during the wait does not cut the helper short" "module returned '$got' while the helper was still running"
+    fi
+    if [ "$got" = "$PAM_IGNORE" ]; then
+        ok "the helper's exit code is still read after a signal"
+    else
+        ko "the helper's exit code is still read after a signal" "got '$got'"
+    fi
+
+    # If exec fails, the child must leave with _exit(): exit() would flush the
+    # stdio buffers it inherited from the process that loaded the module.
+    rm -f "$FINGWIT_ENVDUMP_PATH"
+    log="$WORK/buffered.log"
+    FINGWIT_DRIVER_BUFFERED_LOG="$log" "$DRIVER" "$FINGWIT_ENVDUMP_SO" sudo "$USER" debug >/dev/null 2>&1
+    count=$(grep -c '^marker$' "$log" 2>/dev/null || echo 0)
+    if [ "$count" = "1" ]; then
+        ok "a failed exec does not flush the caller's stdio buffers"
+    else
+        ko "a failed exec does not flush the caller's stdio buffers" "marker written $count times, expected 1"
+    fi
 else
     echo "  SKIP environment allowlist (set FINGWIT_ENVDUMP_SO and FINGWIT_ENVDUMP_PATH)"
 fi

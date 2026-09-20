@@ -5,6 +5,7 @@
 
 #include <security/pam_modules.h>
 #include <security/pam_appl.h>
+#include <errno.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -75,7 +76,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, cons
     const char *service;
     int ret;
     pid_t pid;
-    int status;
+    int status = 0;
     char **args;
     char **envp;
     int i;
@@ -128,12 +129,20 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, cons
         }
 
         execve(PYTHON_EXECUTABLE, args, envp);
-        exit(PAM_AUTHINFO_UNAVAIL);
+
+        // Not exit(): the caller's stdio buffers and atexit() handlers are ours too.
+        _exit(PAM_AUTHINFO_UNAVAIL);
     } else if (pid > 0) {
         // Parent process - wait for child
         free(args);
         free_env(envp);
-        waitpid(pid, &status, 0);
+
+        // PAM callers have signal handlers installed; giving up on EINTR
+        // would leave status unread.
+        while (waitpid(pid, &status, 0) < 0) {
+            if (errno != EINTR)
+                return PAM_AUTHINFO_UNAVAIL;
+        }
         
         if (WIFEXITED(status)) {
             int exit_code = WEXITSTATUS(status);
