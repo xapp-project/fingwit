@@ -28,6 +28,13 @@ meson compile -C "$build/envdump-module" pam_fingwit >/dev/null
 
 cc -Wall -Wextra -o "$build/pam_driver" "$here/pam_driver.c" -lpam -ldl
 
+status=0
+
 FINGWIT_ENVDUMP_SO="$build/envdump-module/pam_fingwit.so" \
 FINGWIT_ENVDUMP_PATH="$dump_path" \
-    "$here/test_pam_fingwit.sh" "$build/module/pam_fingwit.so" "$build/pam_driver"
+    "$here/test_pam_fingwit.sh" "$build/module/pam_fingwit.so" "$build/pam_driver" || status=1
+
+echo
+/usr/bin/python3 "$here/test_pam_fingwit_py.py" || status=1
+
+exit $status
