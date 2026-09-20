@@ -144,21 +144,18 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, cons
                 return PAM_AUTHINFO_UNAVAIL;
         }
         
-        if (WIFEXITED(status)) {
-            int exit_code = WEXITSTATUS(status);
-            switch (exit_code) {
-                case PAM_AUTHINFO_UNAVAIL: return PAM_AUTHINFO_UNAVAIL;
-                default: return PAM_IGNORE;
-            }
-        }
+        // Anything but an explicit PAM_IGNORE means the helper never reached
+        // a decision, so skip fprintd rather than guess.
+        if (WIFEXITED(status) && WEXITSTATUS(status) == PAM_IGNORE)
+            return PAM_IGNORE;
+
+        return PAM_AUTHINFO_UNAVAIL;
     } else {
         // Fork failed
         free(args);
         free_env(envp);
         return PAM_SYSTEM_ERR;
     }
-    
-    return PAM_AUTHINFO_UNAVAIL;
 }
 
 PAM_EXTERN int pam_sm_setcred(pam_handle_t *pamh, int flags, int argc, const char **argv) {

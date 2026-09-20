@@ -205,6 +205,50 @@ EOF
         ko "the helper's exit code is still read after a signal" "got '$got'"
     fi
 
+    # The helper only exits 25 or 9. Anything else means it died on the way
+    # (traceback 1, missing interpreter 127), so fall back to the password.
+    for code in 0 1 2 127; do
+        cat > "$FINGWIT_ENVDUMP_PATH" <<EOF
+#!/bin/sh
+exit $code
+EOF
+        chmod +x "$FINGWIT_ENVDUMP_PATH"
+        got=$("$DRIVER" "$FINGWIT_ENVDUMP_SO" sudo "$USER" debug 2>/dev/null)
+        if [ "$got" = "$PAM_AUTHINFO_UNAVAIL" ]; then
+            ok "helper exit $code falls back to the password path"
+        else
+            ko "helper exit $code falls back to the password path" "got '$got'"
+        fi
+    done
+
+    # A helper that crashes must not be read as approval either.
+    cat > "$FINGWIT_ENVDUMP_PATH" <<'EOF'
+#!/bin/sh
+kill -SEGV $$
+EOF
+    chmod +x "$FINGWIT_ENVDUMP_PATH"
+    got=$("$DRIVER" "$FINGWIT_ENVDUMP_SO" sudo "$USER" debug 2>/dev/null)
+    if [ "$got" = "$PAM_AUTHINFO_UNAVAIL" ]; then
+        ok "a helper killed by a signal falls back to the password path"
+    else
+        ko "a helper killed by a signal falls back to the password path" "got '$got'"
+    fi
+
+    # The two codes the helper really uses must still be honoured.
+    for code in "$PAM_IGNORE" "$PAM_AUTHINFO_UNAVAIL"; do
+        cat > "$FINGWIT_ENVDUMP_PATH" <<EOF
+#!/bin/sh
+exit $code
+EOF
+        chmod +x "$FINGWIT_ENVDUMP_PATH"
+        got=$("$DRIVER" "$FINGWIT_ENVDUMP_SO" sudo "$USER" debug 2>/dev/null)
+        if [ "$got" = "$code" ]; then
+            ok "helper exit $code is passed through"
+        else
+            ko "helper exit $code is passed through" "got '$got'"
+        fi
+    done
+
     # If exec fails, the child must leave with _exit(): exit() would flush the
     # stdio buffers it inherited from the process that loaded the module.
     rm -f "$FINGWIT_ENVDUMP_PATH"
