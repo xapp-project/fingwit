@@ -1,4 +1,4 @@
-project('fingwit', 'c', version : '1.0.9', meson_version : '>= 0.59.0')
+project('fingwit', 'c', version : '1.1.0', meson_version : '>= 0.59.0')
 
 # Python installation
 python = import('python').find_installation('python3')
