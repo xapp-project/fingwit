@@ -16,20 +16,22 @@ def pam_sm_authenticate(pamh, flags, argv):
     # Initialize syslog like fprintd does
     syslog.openlog("pam_fingwit", syslog.LOG_PID, syslog.LOG_AUTHPRIV)
     
+    # Parse PAM module arguments first. The error handler below reports
+    # through this flag, so it has to exist before anything can fail.
+    debug = False
+
+    for arg in argv:
+        if arg == 'debug':
+            debug = True
+
     try:
         settings = Gio.Settings(schema_id="org.x.fingwit")
-
-        # Parse PAM module arguments
-        debug = False
-        
-        for arg in argv:
-            if arg == 'debug':
-                debug = True
 
         # Get username from PAM
         user = pamh.get_user()
         if not user:
-            return PAM.PAM_IGNORE
+            # Without a username none of the checks below mean anything.
+            return PAM.PAM_AUTHINFO_UNAVAIL
                 
         # Skip fingerprint auth for SSH sessions
         if is_ssh_session():
@@ -60,10 +62,13 @@ def pam_sm_authenticate(pamh, flags, argv):
         return PAM.PAM_IGNORE
         
     except Exception as e:
-        # Log error and fall back to next auth method
-        if debug:
-            syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: EXCEPTION: {e}")
-        return PAM.PAM_IGNORE
+        # No decision could be reached, so don't make one up. Skipping fprintd
+        # only costs the user the fingerprint prompt and leaves the password
+        # working; letting it run on a guess is how fingerprint login ends up
+        # offered on an encrypted home, which is what this module is for.
+        syslog.syslog(syslog.LOG_WARNING,
+                      f"pam_fingwit: skipping fprintd after an internal error: {e}")
+        return PAM.PAM_AUTHINFO_UNAVAIL
 
 
 def is_login_session():
