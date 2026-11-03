@@ -170,11 +170,11 @@ def pam_sm_acct_mgmt(pamh, flags, argv):
 
 if __name__ == "__main__":
     # Check if we're being called by PAM C wrapper
-    if len(sys.argv) >= 3 and not sys.argv[1].startswith('TEST'):
-        # Called by C wrapper: python3 script.py user service [pam_args...]
-        user = sys.argv[1]
-        service = sys.argv[2]
-        pam_args = sys.argv[3:] if len(sys.argv) > 3 else []
+    if len(sys.argv) >= 4 and sys.argv[1] == '--pam':
+        # Called by C wrapper: python3 -I script.py --pam user service [pam_args...]
+        user = sys.argv[2]
+        service = sys.argv[3]
+        pam_args = sys.argv[4:]
         
         # Set environment for consistency
         os.environ['PAM_USER'] = user
