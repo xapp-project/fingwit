@@ -1,3 +1,4 @@
 usr/lib/*/security/pam_fingwit.so
 usr/lib/*/fingwit/pam_fingwit.py
 usr/share/pam-configs/fingwit
+usr/share/glib-2.0/schemas/org.x.fingwit.gschema.xml

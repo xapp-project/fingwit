@@ -29,7 +29,11 @@ Depends: ${misc:Depends},
          ${shlibs:Depends},
          python3,
          python3-gi,
+         python3-pam,
+         gir1.2-glib-2.0,
          fprintd
+Breaks: fingwit (<< 1.1.1~)
+Replaces: fingwit (<< 1.1.1~)
 Description: Smart PAM module for fingerprint authentication
  This PAM module is used in combination with pam_fprintd.so.
  .
