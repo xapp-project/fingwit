@@ -74,7 +74,7 @@ def is_login_session():
     if pam_service:
         # Only these services require home directory decryption
         login_services = ['lightdm', 'gdm', 'kdm', 'mdm', 'sddm', 'login']
-        if pam_service in login_services:
+        if pam_service in login_services or pam_service.startswith('gdm-'):
             return True
     
     # Method 2: Check IMMEDIATE parent (not whole tree)
@@ -85,7 +85,7 @@ def is_login_session():
             parent_name = f.read().strip()
             
         # Direct parent is a display manager = initial login
-        if parent_name in ['lightdm', 'gdm', 'kdm', 'mdm', 'sddm', 'login']:
+        if parent_name in ['lightdm', 'gdm', 'gdm-session-wor', 'kdm', 'mdm', 'sddm', 'login']:
             return True
             
     except:
