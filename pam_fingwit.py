@@ -54,10 +54,9 @@ def pam_sm_authenticate(pamh, flags, argv):
         return PAM.PAM_IGNORE
         
     except Exception as e:
-        # Log error and fall back to next auth method
-        if debug:
-            syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: EXCEPTION: {e}")
-        return PAM.PAM_IGNORE
+        # Fail closed: skip fingerprint and require the password
+        syslog.syslog(syslog.LOG_WARNING, f"pam_fingwit: PAM_AUTHINFO_UNAVAIL (error: {e})")
+        return PAM.PAM_AUTHINFO_UNAVAIL
 
 
 def login_enabled():
