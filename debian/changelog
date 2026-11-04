@@ -1,3 +1,15 @@
+fingwit (1.1.1) adrien; urgency=high
+
+  * pam_fingwit: Fix local user escalation
+  * Fix GDM support
+  * Make libpam-fingwit work without fingwit
+  * pam_fingwit: only require the GSettings schema for logins
+  * pam_fingwit: ask for the password when the username is empty
+  * pam_fingwit: ask for the password when an error occurs
+  * pam_fingwit: Harden remote session detection
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 04 Nov 2026 10:49:05 +0000
+
 fingwit (1.1.0) adrien; urgency=medium
 
   [ Butterfly ]
