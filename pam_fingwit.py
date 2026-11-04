@@ -17,14 +17,8 @@ def pam_sm_authenticate(pamh, flags, argv):
     syslog.openlog("pam_fingwit", syslog.LOG_PID, syslog.LOG_AUTHPRIV)
     
     try:
-        settings = Gio.Settings(schema_id="org.x.fingwit")
-
         # Parse PAM module arguments
-        debug = False
-        
-        for arg in argv:
-            if arg == 'debug':
-                debug = True
+        debug = 'debug' in argv
 
         # Get username from PAM
         user = pamh.get_user()
@@ -44,7 +38,7 @@ def pam_sm_authenticate(pamh, flags, argv):
 
         # Check if this is a login session
         if is_login_session():
-            if not settings.get_boolean("login-enabled"):
+            if not login_enabled():
                 if debug:
                     syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_AUTHINFO_UNAVAIL (login, password required)")
                 return PAM.PAM_AUTHINFO_UNAVAIL
@@ -64,6 +58,17 @@ def pam_sm_authenticate(pamh, flags, argv):
         if debug:
             syslog.syslog(syslog.LOG_DEBUG, f"pam_fingwit: EXCEPTION: {e}")
         return PAM.PAM_IGNORE
+
+
+def login_enabled():
+    """Read login-enabled, defaulting to False if the schema is missing"""
+
+    # Gio.Settings aborts the process if the schema is missing
+    source = Gio.SettingsSchemaSource.get_default()
+    if source is None or source.lookup("org.x.fingwit", True) is None:
+        return False
+
+    return Gio.Settings(schema_id="org.x.fingwit").get_boolean("login-enabled")
 
 
 def is_login_session():
