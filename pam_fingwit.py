@@ -30,7 +30,14 @@ def pam_sm_authenticate(pamh, flags, argv):
             if debug:
                 syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_AUTHINFO_UNAVAIL (SSH session)")
             return PAM.PAM_AUTHINFO_UNAVAIL
-        
+
+        # The SSH_* variables are the caller's to unset; logind's view of
+        # the caller's session is not.
+        if caller_in_remote_session():
+            if debug:
+                syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_AUTHINFO_UNAVAIL (remote logind session)")
+            return PAM.PAM_AUTHINFO_UNAVAIL
+
         if user_has_session(user):
             if debug:
                 syslog.syslog(syslog.LOG_DEBUG, "pam_fingwit: PAM_IGNORE (session already exists)")
@@ -121,6 +128,42 @@ def is_ssh_session():
         pass
         
     return False
+
+LOGIND = 'org.freedesktop.login1'
+
+
+def caller_in_remote_session(bus=None, pid=None):
+    """Whether the program asking for authentication runs in a logind
+    session that logind marks Remote (SSH, a remote desktop login).
+
+    The program is this script's parent: pam_fingwit.so forks it from the
+    PAM application (sudo, su, polkit-agent-helper-1, gdm-session-worker).
+
+    A process outside any logind session can't be classified this way. A
+    terminal under GNOME's systemd user instance is one, and so is anything
+    started with `systemd-run --user`, which a remote user can also do; this
+    check stops casual and scripted use over SSH, not someone already able to
+    run code as the user.
+    """
+    bus = bus or Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
+    pid = pid or os.getppid()
+    try:
+        reply = bus.call_sync(LOGIND, '/org/freedesktop/login1',
+                              f'{LOGIND}.Manager', 'GetSessionByPID',
+                              GLib.Variant('(u)', (pid,)), GLib.VariantType('(o)'),
+                              Gio.DBusCallFlags.NONE, 5000, None)
+    except GLib.Error as e:
+        if Gio.DBusError.get_remote_error(e) == f'{LOGIND}.NoSessionForPID':
+            return False
+        raise
+
+    session_path = reply.unpack()[0]
+    reply = bus.call_sync(LOGIND, session_path,
+                          'org.freedesktop.DBus.Properties', 'Get',
+                          GLib.Variant('(ss)', (f'{LOGIND}.Session', 'Remote')),
+                          GLib.VariantType('(v)'), Gio.DBusCallFlags.NONE, 5000, None)
+    return bool(reply.unpack()[0])
+
 
 def user_has_session(user):
     try:
