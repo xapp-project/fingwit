@@ -23,7 +23,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         # Get username from PAM
         user = pamh.get_user()
         if not user:
-            return PAM.PAM_IGNORE
+            return PAM.PAM_AUTHINFO_UNAVAIL
                 
         # Skip fingerprint auth for SSH sessions
         if is_ssh_session():
