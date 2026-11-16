@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-11-21 18:53+0000\n"
+"PO-Revision-Date: 2026-11-07 03:48+0000\n"
 "Last-Translator: AO <Unknown>\n"
 "Language-Team: French (Canada) <fr_CA@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:45+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: fr_CA\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
@@ -93,11 +93,11 @@ msgstr "Votre empreinte digitale est enregistrée."
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Bonne numérisation (%d pour l’instant). Recommencez…"
+msgstr "Bonne lecture (%d pour l’instant). Recommencez…"
 
 #: fingwit:302
 msgid "Try again..."
-msgstr "Réessayer…"
+msgstr "Réessayez…"
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
@@ -106,7 +106,7 @@ msgstr "Votre empreinte n’a pas été enregistrée."
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
 msgstr ""
-"Cette empreinte digitale est déjà enregistrée, utilisez un autre doigt."
+"Cette empreinte digitale est déjà enregistrée. Utilisez un autre doigt."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
@@ -118,11 +118,11 @@ msgstr "Une erreur inconnue est survenue."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Aucun lecteur d’empreinte digitale n’a été détecté"
+msgstr "Aucun lecteur d’empreintes digitales n’a été détecté."
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr "L’authentification par empreinte digitale a été désactivée"
+msgstr "L’authentification par empreinte digitale a été désactivée."
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
@@ -134,7 +134,7 @@ msgstr "Choisissez un doigt à configurer :"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr "Les empreintes actives sont en surlignées en vert"
+msgstr "Les empreintes actives sont surlignées en vert."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"

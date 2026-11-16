@@ -1,0 +1,150 @@
+# Uyghur translation for linuxmint
+# Copyright (c) 2026 Rosetta Contributors and Canonical Ltd 2026
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2026-06-17 19:06+0000\n"
+"Last-Translator: Abduqadir Abliz <Unknown>\n"
+"Language-Team: Uyghur <ug@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+"Language: ug\n"
+
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "بارماق ئىزى"
+
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "بارماق ئىزى سەپلەش قورالى"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr ""
+"fingerprint;authentication;security;biometric;بارماق ئىزى;كىملىك "
+"دەلىللەش;بىخەتەرلىك;بىيولوگىيەلىك خاسلىق;"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "ئوڭ كۆرسەتكۈچ بارماق"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "ئوڭ ئوتتۇرا بارماق"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "ئوڭ نامسىز بارماق"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "ئوڭ چىمچىلاق"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "ئوڭ باش بارماق"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "سول كۆرسەتكۈچ بارماق"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "سول ئوتتۇرا بارماق"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "سول نامسىز بارماق"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "سول چىمچىلاق"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "سول باش بارماق"
+
+#: fingwit:98
+msgid "Disable fingerprint authentication"
+msgstr "بارماق ئىزى دەلىللەشنى چەكلە"
+
+#: fingwit:102 fingwit:132
+msgid "About"
+msgstr "ھەققىدە"
+
+#: fingwit:107
+msgid "Quit"
+msgstr "چېكىن"
+
+#: fingwit:275
+msgid "Place your finger on the scanner..."
+msgstr "بارمىقىڭىزنى سەزگۈچكە قويۇڭ…"
+
+#: fingwit:293
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "ياخشى! بارماق ئىزىڭىز مۇۋەپپەقىيەتلىك ساقلاندى."
+
+#: fingwit:299
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr "ياخشى تارالدى (ھازىرغىچە %d)! قايتىلاڭ…"
+
+#: fingwit:302
+msgid "Try again..."
+msgstr "قايتا سىناڭ…"
+
+#: fingwit:305
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "كەچۈرۈڭ، بارماق ئىزىڭىزنى ساقلىغىلى بولمايدۇ."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "بۇ بارماق ئىزى ساقلانغان، باشقا بارمىقىڭىزنى سىناڭ."
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "بۇ ئۈسكۈنە ئەمدى باشقا بارماق ئىزىنى ساقلىيالمايدۇ."
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "نامەلۇم خاتالىق كۆرۈلدى."
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "ھېچقانداق بارماق ئىزى ئوقۇغۇچ بايقالمىدى"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "بارماق ئىزى بىلەن كىملىك دەلىللەش چەكلەندى"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "قوزغات"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "سەپلەيدىغان بارماق تاللىنىدۇ:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "ئاكتىپ بارماق ئىزى يېشىل رەڭدە يورۇتۇلىدۇ."
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "ۋاز كەچ"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "بۇ بارماق ئىزىنى ئۆچۈر"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "بارماق ئىزى قوش"

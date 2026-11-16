@@ -8,140 +8,140 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-06-20 10:03+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-05-23 14:36+0000\n"
+"Last-Translator: Denis Tsvetkov <Unknown>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:45+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
-msgstr ""
+msgstr "Адбіткі пальцаў"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr ""
+msgstr "Інструмент налады адбіткаў пальцаў"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
-msgstr ""
+msgstr "fingerprint, адбітак, пальцы, бяспека, біяметрыя, аўтэнтыкацыя"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr ""
+msgstr "Правы ўказальны палец"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr ""
+msgstr "Правы сярэдні палец"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr ""
+msgstr "Правы безыменны палец"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr ""
+msgstr "Правы мезенец"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr ""
+msgstr "Правы вялікі палец"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr ""
+msgstr "Левы ўказальны палец"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr ""
+msgstr "Левы сярэдні палец"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr ""
+msgstr "Левы безыменны палец"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr ""
+msgstr "Левы мезенец"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr ""
+msgstr "Левы вялікі палец"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
-msgstr ""
+msgstr "Адключыць аўтэнтыфікацыю па адбітках пальцаў"
 
 #: fingwit:102 fingwit:132
 msgid "About"
-msgstr ""
+msgstr "Аб праграме"
 
 #: fingwit:107
 msgid "Quit"
-msgstr ""
+msgstr "Выйсці"
 
 #: fingwit:275
 msgid "Place your finger on the scanner..."
-msgstr ""
+msgstr "Прыкладзіце палец да сканера..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr ""
+msgstr "Выдатна! Ваш адбітак пальца паспяхова захаваны."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr ""
+msgstr "Добра прасканавана (на %d)! Прыкладзіце зноў..."
 
 #: fingwit:302
 msgid "Try again..."
-msgstr ""
+msgstr "Паспрабуйце зноў..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr ""
+msgstr "На жаль, ваш адбітак пальца не ўдалося захаваць."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
-msgstr ""
+msgstr "Гэты адбітак ужо захаваны, скарыстайцеся іншым пальцам."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr ""
+msgstr "Гэта прылада не можа захаваць больш адбіткаў пальцаў."
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr ""
+msgstr "Адбылася невядомая памылка."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr ""
+msgstr "Сканер адбіткаў пальцаў не знойдзены"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
-msgstr ""
+msgstr "Аўтэнтыфікацыя па адбітках пальцаў адключана"
 
 #: data/fingwit/fingwit.ui.h:3
 msgid "Enable"
-msgstr ""
+msgstr "Уключыць"
 
 #: data/fingwit/fingwit.ui.h:4
 msgid "Choose a finger to configure it:"
-msgstr ""
+msgstr "Выберыце палец для налады:"
 
 #: data/fingwit/fingwit.ui.h:5
 msgid "Active fingerprints are highlighted in green."
-msgstr ""
+msgstr "Актыўныя адбіткі пальцаў вылучаюцца зялёным колерам."
 
 #: data/fingwit/fingwit.ui.h:6
 msgid "Cancel"
-msgstr ""
+msgstr "Скасаваць"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr ""
+msgstr "Выдаліць гэты адбітак"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr ""
+msgstr "Дадаць адбітак"

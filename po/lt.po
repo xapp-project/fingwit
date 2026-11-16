@@ -1,0 +1,149 @@
+# Lithuanian translation for linuxmint
+# Copyright (c) 2026 Rosetta Contributors and Canonical Ltd 2026
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2026-11-05 14:43+0000\n"
+"Last-Translator: Moo <hazap@hotmail.com>\n"
+"Language-Team: Lithuanian <lt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "Piršto atspaudai"
+
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "Piršto atspaudo konfigūravimo įrankis"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr ""
+"piršto atspaudas,pirsto atspaudas,pirštų atspaudas,pirstu "
+"atspaudas,tapatybės nustatymas,tapatybes nustatymas,saugumas,biometrinis"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "Dešinysis smilius"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "Dešinysis didysis pirštas"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "Dešinysis bevardis pirštas"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "Dešinysis mažasis pirštas"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "Dešinysis nykštys"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "Kairysis smilius"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "Kairysis didysis pirštas"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "Kairysis bevardis pirštas"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "Kairysis mažasis pirštas"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "Kairysis nykštys"
+
+#: fingwit:98
+msgid "Disable fingerprint authentication"
+msgstr "Išjungti tapatybės nustatymą piršto atspaudu"
+
+#: fingwit:102 fingwit:132
+msgid "About"
+msgstr "Apie"
+
+#: fingwit:107
+msgid "Quit"
+msgstr ""
+
+#: fingwit:275
+msgid "Place your finger on the scanner..."
+msgstr "Padėkite pirštą ant skenerio..."
+
+#: fingwit:293
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "Puiku! Jūsų piršto atspaudas buvo sėkmingai įrašytas."
+
+#: fingwit:299
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr ""
+
+#: fingwit:302
+msgid "Try again..."
+msgstr "Bandyti dar kartą..."
+
+#: fingwit:305
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "Apgailestaujame, nepavyko įrašyti jūsų piršto atspaudo."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "Šis piršto atspaudas jau įrašytas, naudokite kitą pirštą."
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "Šis įrenginys negali saugoti daugiau piršto atspaudų."
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "Įvyko nežinoma klaida."
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr ""
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "Tapatybės nustatymas piršto atspaudu išjungtas"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "Įjungti"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "Pasirinkite, kurį pirštą konfigūruoti:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "Aktyvūs piršto atspaudai yra paryškinti žaliai."
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "Ištrinti šį piršto atspaudą"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "Pridėti piršto atspaudą"

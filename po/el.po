@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-09-28 05:32+0000\n"
-"Last-Translator: Ourania J. Banti <Unknown>\n"
+"PO-Revision-Date: 2026-01-31 10:42+0000\n"
+"Last-Translator: Dimitris Spentzos <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:45+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
 msgid "Fingerprints"
@@ -113,10 +113,11 @@ msgstr ""
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
 msgstr ""
+"Αυτή η συσκευή δεν μπορεί να αποθηκεύσει περισσότερα δακτυλικά αποτυπώματα."
 
 #: fingwit:320
 msgid "An unknown error occured."
-msgstr ""
+msgstr "Προέκυψε άγνωστο σφάλμα."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"

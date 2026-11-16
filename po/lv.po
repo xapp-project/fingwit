@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: linuxmint\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2025-11-19 16:04+0000\n"
-"PO-Revision-Date: 2025-12-25 12:45+0000\n"
-"Last-Translator: Klavs Petersons <Unknown>\n"
+"PO-Revision-Date: 2026-04-11 14:43+0000\n"
+"Last-Translator: K9 <Unknown>\n"
 "Language-Team: Latvian <lv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:45+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: lv\n"
 
 #: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
@@ -24,7 +24,7 @@ msgstr "Pirkstu nospiedumi"
 
 #: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
 msgid "Fingerprint configuration tool"
-msgstr "Pirkstu nospiedumu konfigurēšanas rīks"
+msgstr "Pirkstu nospiedumu konfigurācijas rīks"
 
 #: data/fingwit.desktop.in:11
 msgid "fingerprint;authentication;security;biometric;"
@@ -32,43 +32,43 @@ msgstr "pirkstu nospiedumi; autentifikācija; drošība; biometriskie dati;"
 
 #: fingwit:39
 msgid "Right index finger"
-msgstr "Labais rādītājpirksts"
+msgstr "Labās rokas rādītājpirksts"
 
 #: fingwit:40
 msgid "Right middle finger"
-msgstr "Labais vidējais pirksts"
+msgstr "Labās rokas vidējais pirksts"
 
 #: fingwit:41
 msgid "Right ring finger"
-msgstr "Labais zeltnesis"
+msgstr "Labās rokas zeltnesis"
 
 #: fingwit:42
 msgid "Right little finger"
-msgstr "Labais mazais pirkstiņš"
+msgstr "Labās rokas mazais pirkstiņš"
 
 #: fingwit:43
 msgid "Right thumb"
-msgstr "Labais īkšķis"
+msgstr "Labās rokas īkšķis"
 
 #: fingwit:44
 msgid "Left index finger"
-msgstr "Kreisais rādītājpirksts"
+msgstr "Kreisās rokas rādītājpirksts"
 
 #: fingwit:45
 msgid "Left middle finger"
-msgstr "Kreisais vidējais pirksts"
+msgstr "Kreisās rokas vidējais pirksts"
 
 #: fingwit:46
 msgid "Left ring finger"
-msgstr "Kreisais zeltnesis"
+msgstr "Kreisās rokas zeltnesis"
 
 #: fingwit:47
 msgid "Left little finger"
-msgstr "Kreisais mazais pirkstiņš"
+msgstr "Kreisās rokas mazais pirkstiņš"
 
 #: fingwit:48
 msgid "Left thumb"
-msgstr "Kreisais īkšķis"
+msgstr "Kreisās rokas īkšķis"
 
 #: fingwit:98
 msgid "Disable fingerprint authentication"
@@ -88,12 +88,12 @@ msgstr "Novieto pirkstu uz skenera..."
 
 #: fingwit:293
 msgid "Well done! Your fingerprint was saved successfully."
-msgstr "Lieliski! Tavs pirksta nospiedums tika veiksmīgi saglabāts."
+msgstr "Labi darīts! Tavs pirkstu nospiedums tika saglabāts veiksmīgi."
 
 #: fingwit:299
 #, python-format
 msgid "Good scan (%d so far)! Do it again..."
-msgstr "Labs skenējums (%d līdz šim)! Veic atkārtotu skenēšanu..."
+msgstr "Labs skenējums (%d līdz šim)! Izdari to vēlreiz..."
 
 #: fingwit:302
 msgid "Try again..."
@@ -101,7 +101,7 @@ msgstr "Mēģini vēlreiz..."
 
 #: fingwit:305
 msgid "Sorry, your fingerprint could not be saved."
-msgstr "Atvaino, tavu pirkstu nospiedumu neizdevās saglabāt."
+msgstr "Atvaino, tavu pirksta nospiedumu nevarēja saglabāt."
 
 #: fingwit:310
 msgid "This fingerprint is already saved, use a different finger."
@@ -109,7 +109,7 @@ msgstr "Šis pirkstu nospiedums jau ir saglabāts, izmanto citu pirkstu."
 
 #: fingwit:315
 msgid "This device cannot store any more fingerprints."
-msgstr "Šī ierīce nevar uzglabāt vairāk pirkstu nospiedumu."
+msgstr "Šajā ierīcē vairs nevar saglabāt pirkstu nospiedumus."
 
 #: fingwit:320
 msgid "An unknown error occured."
@@ -117,7 +117,7 @@ msgstr "Radās nezināma kļūda."
 
 #: data/fingwit/fingwit.ui.h:1
 msgid "No fingerprint reader detected"
-msgstr "Nav konstatēts pirkstu nospiedumu lasītājs"
+msgstr "Nav atrasts pirkstu nospiedumu lasītājs"
 
 #: data/fingwit/fingwit.ui.h:2
 msgid "Fingerprint authentication disabled"
@@ -141,8 +141,8 @@ msgstr "Atcelt"
 
 #: data/fingwit/fingwit.ui.h:7
 msgid "Delete this fingerprint"
-msgstr "Dzēst šo pirkstu nospiedumu"
+msgstr "Izdzēst šo pirksta nospiedumu"
 
 #: data/fingwit/fingwit.ui.h:8
 msgid "Add a fingerprint"
-msgstr "Pievienot pirkstu nospiedumu"
+msgstr "Pievienot pirksta nospiedumu"

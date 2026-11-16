@@ -1,0 +1,148 @@
+# Galician translation for linuxmint
+# Copyright (c) 2026 Rosetta Contributors and Canonical Ltd 2026
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2026-10-30 03:15+0000\n"
+"Last-Translator: Calq Calquera <Unknown>\n"
+"Language-Team: Galician <gl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "Pegadas dixitais"
+
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "Ferramenta de configuración de pegadas dixitais"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr "pegada dixital;autenticación;seguridade;biometría;"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "Índice dereito"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "Maior dereito"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "Anular dereito"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "Maimiño dereito"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "Polgar dereito"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "Índice esquerdo"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "Maior esquerdo"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "Anular esquerdo"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "Maimiño esquerdo"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "Polgar esquerdo"
+
+#: fingwit:98
+msgid "Disable fingerprint authentication"
+msgstr "Desactivar a autenticación mediante pegadas dixitais"
+
+#: fingwit:102 fingwit:132
+msgid "About"
+msgstr "Sobre"
+
+#: fingwit:107
+msgid "Quit"
+msgstr "Saír"
+
+#: fingwit:275
+msgid "Place your finger on the scanner..."
+msgstr "Coloque o dedo no lector de pegadas dixitais..."
+
+#: fingwit:293
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "Moi ben! A súa pegada dixital gardouse correctamente."
+
+#: fingwit:299
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr ""
+"Lectura correcta! Lecturas válidas ata agora: %d. Repita a operación..."
+
+#: fingwit:302
+msgid "Try again..."
+msgstr "Volva tentalo..."
+
+#: fingwit:305
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "Non se puido gardar a súa pegada dixital."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "Esta pegada dixital xa está gardada. Empregue outro dedo."
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "Este dispositivo non pode gardar máis pegadas dixitais."
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "Produciuse un erro descoñecido."
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "Non se detectou ningún lector de pegadas dixitais"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "Autenticación mediante pegadas dixitais desactivada"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "Activar"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "Escolla un dedo para configurar a súa pegada dixital:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "As pegadas dixitais rexistradas resáltanse en verde."
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "Eliminar esta pegada dixital"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "Engadir unha pegada dixital"

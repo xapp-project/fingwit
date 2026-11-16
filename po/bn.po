@@ -1,0 +1,149 @@
+# Bengali translation for linuxmint
+# Copyright (c) 2026 Rosetta Contributors and Canonical Ltd 2026
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2026-11-01 11:17+0000\n"
+"Last-Translator: Itmam <Unknown>\n"
+"Language-Team: Bengali <bn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "ফিঙ্গারপ্রিন্ট"
+
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "আঙ্গুলের ছাপ ব্যবহার করার কনফিগারেশনের জন্য"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr ""
+"fingerprint;authentication;security;biometric;ফিঙ্গারপ্রিন্ট;আঙ্গুলের;ছাপ;নির"
+"াপত্তা;সুরক্ষা;পরিচয়;নিশ্চিত;অথেনটিকেট"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "ডান হাতের তর্জনি"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "ডান হাতের মধ্যাঙ্গুল"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "ডান হাতের অনামিকা"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "ডান হাতের কড়ে আঙ্গুল"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "ডান হাতের বৃদ্ধাঙ্গুলি"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "বাম হাতের তর্জনি"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "বাম হাতের মধ্যাঙ্গুল"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "বামহাতের অনামিকা"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "বাম হাতের কড়ে আঙ্গুল"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "বাম হাতের বৃদ্ধাঙ্গুলি"
+
+#: fingwit:98
+msgid "Disable fingerprint authentication"
+msgstr "আঙ্গুলের ছাপের মাধ্যমে পরিচয়করণ বন্ধ করুন"
+
+#: fingwit:102 fingwit:132
+msgid "About"
+msgstr "পরিচিতি"
+
+#: fingwit:107
+msgid "Quit"
+msgstr "বন্ধ করুন"
+
+#: fingwit:275
+msgid "Place your finger on the scanner..."
+msgstr "আপনার আঙ্গুল স্ক্যানার এর উপর বসান..."
+
+#: fingwit:293
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "অভিনন্দন! আপনার আঙ্গুলের ছাপ সফলভাবে সংরক্ষণ করা হয়েছে।"
+
+#: fingwit:299
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr "ভালো স্ক্যান (এ পর্যন্ত %d সম্পন্ন)! আবার করুন।"
+
+#: fingwit:302
+msgid "Try again..."
+msgstr "পুনরায় চেষ্টা করুন..."
+
+#: fingwit:305
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "দুঃখিত, আপনার আঙ্গুলের ছাপ সংরক্ষণ করা সম্ভব হয় নাই।"
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "এ আঙ্গুলের ছাপ আগে থেকেই সংরক্ষণ করা হয়েছে, অন্য আঙ্গল ব্যবহার করুন"
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "এ সিস্টেম এর থেকে বেশি আঙ্গুলের ছাপ ধারণ করতে পারে না।"
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "একটি অজানা ত্রুটি দেখা দিয়েছে।"
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "কোন ফিঙ্গারপ্রিন্ট রিডার সনাক্ত করা যায় নাই"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "আঙ্গুলের ছাপের মাধ্যমে পরিচয় সনাক্তকরণ বন্ধ"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "সত্রিয় করুন"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "একটি আঙ্গুল বেছে নিন সেই আঙ্গুলকে কনফিগার করতে:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "সক্রিয় আঙুলের ছাপগুলো সবুজ রঙে চিহ্নিত করা হয়েছে।"
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "বাতিল"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "এই আঙ্গুলের ছাপ মুছে ফেলুন"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "আঙ্গুলের ছাপ যুক্ত করুন"

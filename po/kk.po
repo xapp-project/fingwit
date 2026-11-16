@@ -1,0 +1,148 @@
+# Kazakh translation for linuxmint
+# Copyright (c) 2026 Rosetta Contributors and Canonical Ltd 2026
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-11-19 16:04+0000\n"
+"PO-Revision-Date: 2026-01-24 17:27+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <Unknown>\n"
+"Language-Team: Kazakh <kk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2026-11-16 12:01+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
+"Language: kk\n"
+
+#: data/fingwit.desktop.in:3 fingwit:81 data/fingwit/fingwit.ui.h:9
+msgid "Fingerprints"
+msgstr "Саусақ іздері"
+
+#: data/fingwit.desktop.in:4 fingwit:134 data/fingwit/fingwit.ui.h:10
+msgid "Fingerprint configuration tool"
+msgstr "Саусақ ізін баптау сайманы"
+
+#: data/fingwit.desktop.in:11
+msgid "fingerprint;authentication;security;biometric;"
+msgstr "саусақ ізі;аутентификация;қауіпсіздік;биометриялық;"
+
+#: fingwit:39
+msgid "Right index finger"
+msgstr "Оң жақ сұқ саусақ"
+
+#: fingwit:40
+msgid "Right middle finger"
+msgstr "Оң жақ ортаңғы саусақ"
+
+#: fingwit:41
+msgid "Right ring finger"
+msgstr "Оң жақ аты жоқ саусақ"
+
+#: fingwit:42
+msgid "Right little finger"
+msgstr "Оң жақ кішкентай саусақ"
+
+#: fingwit:43
+msgid "Right thumb"
+msgstr "Оң жақ бас бармақ"
+
+#: fingwit:44
+msgid "Left index finger"
+msgstr "Сол жақ сұқ саусақ"
+
+#: fingwit:45
+msgid "Left middle finger"
+msgstr "Сол жақ ортаңғы саусақ"
+
+#: fingwit:46
+msgid "Left ring finger"
+msgstr "Сол жақ аты жоқ саусақ"
+
+#: fingwit:47
+msgid "Left little finger"
+msgstr "Сол жақ кішкентай саусақ"
+
+#: fingwit:48
+msgid "Left thumb"
+msgstr "Сол жақ бас бармақ"
+
+#: fingwit:98
+msgid "Disable fingerprint authentication"
+msgstr "Саусақ ізімен аутентификацияны сөндіру"
+
+#: fingwit:102 fingwit:132
+msgid "About"
+msgstr "Туралы"
+
+#: fingwit:107
+msgid "Quit"
+msgstr "Шығу"
+
+#: fingwit:275
+msgid "Place your finger on the scanner..."
+msgstr "Саусағыңызды сканерге қойыңыз..."
+
+#: fingwit:293
+msgid "Well done! Your fingerprint was saved successfully."
+msgstr "Жарайсыз! Саусақ ізіңіз сәтті сақталды."
+
+#: fingwit:299
+#, python-format
+msgid "Good scan (%d so far)! Do it again..."
+msgstr "Жақсы сканерленді (әзірге %d)! Қайталаңыз..."
+
+#: fingwit:302
+msgid "Try again..."
+msgstr "Қайталап көріңіз..."
+
+#: fingwit:305
+msgid "Sorry, your fingerprint could not be saved."
+msgstr "Кешіріңіз, саусақ ізіңізді сақтау мүмкін болмады."
+
+#: fingwit:310
+msgid "This fingerprint is already saved, use a different finger."
+msgstr "Бұл саусақ ізі әлдеқашан сақталған, басқа саусақты қолданыңыз."
+
+#: fingwit:315
+msgid "This device cannot store any more fingerprints."
+msgstr "Бұл құрылғы бұдан былай саусақ іздерін сақтай алмайды."
+
+#: fingwit:320
+msgid "An unknown error occured."
+msgstr "Белгісіз қате орын алды."
+
+#: data/fingwit/fingwit.ui.h:1
+msgid "No fingerprint reader detected"
+msgstr "Саусақ ізін оқитын құрылғы табылмады"
+
+#: data/fingwit/fingwit.ui.h:2
+msgid "Fingerprint authentication disabled"
+msgstr "Саусақ ізімен аутентификация сөндірілген"
+
+#: data/fingwit/fingwit.ui.h:3
+msgid "Enable"
+msgstr "Іске қосу"
+
+#: data/fingwit/fingwit.ui.h:4
+msgid "Choose a finger to configure it:"
+msgstr "Баптау үшін саусақты таңдаңыз:"
+
+#: data/fingwit/fingwit.ui.h:5
+msgid "Active fingerprints are highlighted in green."
+msgstr "Белсенді саусақ іздері жасыл түспен ерекшеленген."
+
+#: data/fingwit/fingwit.ui.h:6
+msgid "Cancel"
+msgstr "Бас тарту"
+
+#: data/fingwit/fingwit.ui.h:7
+msgid "Delete this fingerprint"
+msgstr "Бұл саусақ ізін өшіру"
+
+#: data/fingwit/fingwit.ui.h:8
+msgid "Add a fingerprint"
+msgstr "Саусақ ізін қосу"
