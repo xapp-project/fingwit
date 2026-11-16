@@ -1,3 +1,9 @@
+fingwit (1.1.2) adrien; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 16 Nov 2026 13:29:48 +0000
+
 fingwit (1.1.1) adrien; urgency=high
 
   * pam_fingwit: Fix local user escalation
